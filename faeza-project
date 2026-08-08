@@ -1,10 +1,27 @@
 faeza-project/
 │
 ├── index.html
+├── about.html
+├── services.html
+├── portfolio.html
+├── contact.html
+│
 ├── css/
-│   └── style.css
+│   ├── style.css
+│   ├── responsive.css
+│   └── animation.css
+│
 ├── js/
-│   └── script.js
+│   ├── script.js
+│   ├── portfolio.js
+│   └── animation.js
+│
 ├── assets/
 │   ├── images/
-│   └── logo/
+│   ├── icons/
+│   ├── logo/
+│   └── fonts/
+│
+├── manifest.json
+├── service-worker.js
+└── README.md
