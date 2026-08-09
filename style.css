@@ -486,6 +486,13 @@ p{
     flex-direction: column;
     gap: 15px;
     z-index: 1000;
+
+    /* Background menu */
+    background: #ffffff;
+
+    /* Tampilan */
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   }
 
   nav ul.active {
@@ -499,28 +506,11 @@ p{
   nav ul li a {
     display: block;
     text-decoration: none;
+    color: #111111;
+    padding: 8px 5px;
   }
-    }
 
-
-.nav-menu {
-    display: none;
-    list-style: none;
-    margin: 0;
-    padding: 15px;
-}
-
-.nav-menu.active {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.nav-menu a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.menu {
-    cursor: pointer;
+  nav ul li a:hover {
+    color: #b8860b;
+  }
 }
