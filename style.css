@@ -518,11 +518,11 @@ p{
 .brand {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 5px;
 }
 
 .brand img {
-    width: 15px;
-    height: 15px;
+    width: 3px;
+    height: 3px;
     object-fit: contain;
 }
