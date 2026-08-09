@@ -518,11 +518,11 @@ p{
 .logo {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 8px;
 }
 
 .logo img {
-    width: 10px;
-    height: 10px;
+    width: 30px;
+    height: 30px;
     object-fit: contain;
 }
