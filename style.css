@@ -515,13 +515,13 @@ p{
   }
 }
 
-.brand {
+.logo {
     display: flex;
     align-items: center;
     gap: 5px;
 }
 
-.brand img {
+.logo img {
     width: 10px;
     height: 10px;
     object-fit: contain;
