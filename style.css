@@ -34,18 +34,15 @@ h1{
 }
 
 h3{
-    color: #e0e0e0; 
-    font-size: 1.2rem;
-    max-width: 700px;
-    margin: 0 auto 35px auto;
-    line-height: 1.6;
+    color:white;
+    margin:15px 0;
+    font-weight:normal;
 }
 
 p{
     margin:20px 0;
     line-height:1.8;
     font-size:18px;
-    color:#EAEAEA;
 }
 
 p span{
