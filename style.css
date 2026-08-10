@@ -515,14 +515,3 @@ p{
   }
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.logo img {
-    width: 200px;
-    height: 200px;
-    object-fit: contain;
-}
