@@ -666,3 +666,45 @@ footer a {
         line-height: 1.7;
     }
    }
+
+@media (max-width: 768px) {
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        padding: 0 15px;
+        gap: 22px;
+    }
+
+    .portfolio-card {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .portfolio-card img {
+        width: 100%;
+        height: auto;
+        min-height: 0;
+
+        object-fit: contain;
+    }
+
+    .portfolio-content {
+        padding: 25px 22px 30px;
+    }
+
+    .portfolio-content h3 {
+        font-size: 24px;
+    }
+
+    .portfolio-content p {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .portfolio-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 21px;
+        margin-bottom: 15px;
+    }
+}
