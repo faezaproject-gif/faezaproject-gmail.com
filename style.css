@@ -33,18 +33,24 @@ h1{
     white-space:nowrap;
 }
 
-h2{
-    color:#EAEAEA;
-    margin:15px 0;
-    font-weight:normal;
+.hero-headline {
+    color: #e0e0e0; 
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 35px auto;
+    line-height: 1.6;
 }
 
-p{
+.hero-subheadline {
     margin:20px 0;
     line-height:1.8;
     font-size:18px;
     color:#EAEAEA;
 }
+
+.hero-subheadline span {
+    color: #d4af37;
+    font-style: italic;
 
 .btn{
     text-decoration:none;
