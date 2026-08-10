@@ -743,3 +743,25 @@ footer a {
         line-height: 1.7;
     }
 }
+
+/* ===== RAPIIKAN PORTFOLIO MOBILE ===== */
+
+@media (max-width: 768px) {
+
+    .portfolio-card h3 {
+        font-size: 24px;
+        line-height: 1.35;
+        margin: 18px 20px 12px;
+    }
+
+    .portfolio-card p {
+        font-size: 16px;
+        line-height: 1.6;
+        margin: 0 20px 22px;
+    }
+
+    .portfolio-content {
+        padding: 0 0 5px;
+    }
+
+}
