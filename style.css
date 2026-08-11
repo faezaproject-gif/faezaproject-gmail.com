@@ -1296,7 +1296,101 @@ body.popup-open {
 
 }
 
+/* ========================================
+   POPUP EXTRA INFORMATION
+======================================== */
 
+.service-popup-extra {
+    max-height: 230px;
+    overflow-y: auto;
+
+    margin-bottom: 22px;
+
+    text-align: left;
+}
+
+
+.popup-extra {
+    padding: 14px;
+
+    background: #10151d;
+
+    border: 1px solid rgba(214, 181, 109, 0.25);
+
+    border-radius: 12px;
+}
+
+
+.popup-extra strong {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #d6b56d;
+
+    font-size: 14px;
+}
+
+
+.popup-extra ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+
+.popup-extra li {
+    margin-bottom: 6px;
+
+    color: #b7bec8;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+.popup-note {
+    margin-top: 12px;
+
+    color: #9da6b2;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+/* SCROLLBAR POPUP */
+
+.service-popup-extra::-webkit-scrollbar {
+    width: 5px;
+}
+
+
+.service-popup-extra::-webkit-scrollbar-thumb {
+    background: #d6b56d;
+
+    border-radius: 10px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 480px) {
+
+    .service-popup-extra {
+        max-height: 200px;
+    }
+
+    .popup-extra {
+        padding: 12px;
+    }
+
+    .popup-extra li {
+        font-size: 12px;
+    }
+
+   }
 
 
 
