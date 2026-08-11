@@ -932,3 +932,114 @@ footer a {
     }
 
 }
+
+/* ================================
+   EVENT ORGANIZER
+================================ */
+
+.service-eo {
+    position: relative;
+}
+
+.eo-icon {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.service-eo h3 {
+    color: #d6b56d;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.eo-subtitle {
+    color: #c9cbd1;
+    line-height: 1.7;
+    margin-bottom: 22px;
+}
+
+.eo-services {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.eo-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+
+    padding: 15px;
+    border: 1px solid rgba(214,181,109,0.35);
+    border-radius: 12px;
+
+    background: rgba(255,255,255,0.025);
+
+    transition: 0.3s ease;
+}
+
+.eo-item:hover {
+    transform: translateY(-3px);
+    border-color: #d6b56d;
+    background: rgba(214,181,109,0.06);
+}
+
+.eo-item > span {
+    font-size: 25px;
+    min-width: 32px;
+}
+
+.eo-item h4 {
+    margin: 0 0 5px;
+    color: #d6b56d;
+    font-size: 17px;
+}
+
+.eo-item p {
+    margin: 0;
+    color: #aeb2bb;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.service-button {
+    margin-top: 22px;
+    padding: 12px 22px;
+
+    border: 1px solid #d6b56d;
+    border-radius: 25px;
+
+    background: transparent;
+    color: #d6b56d;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.service-button:hover {
+    background: #d6b56d;
+    color: #11151b;
+}
+
+@media (max-width: 768px) {
+
+    .service-eo h3 {
+        font-size: 25px;
+    }
+
+    .eo-item {
+        padding: 13px;
+    }
+
+    .eo-item h4 {
+        font-size: 16px;
+    }
+
+    .eo-item p {
+        font-size: 14px;
+    }
+
+   }
