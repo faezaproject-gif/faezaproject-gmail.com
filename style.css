@@ -764,450 +764,244 @@ footer a {
         padding: 0 0 5px;
     }
 
+}/* =========================================
+   LAYANAN KAMI - FAEZA PROJECT
+   ========================================= */
+
+.services {
+    padding: 80px 20px;
+    background: #0f141c;
+    text-align: center;
 }
 
-/* ===============================
-   LAYANAN UMROH
-================================ */
+.services h2 {
+    color: #d9b86c;
+    font-size: 42px;
+    margin-bottom: 70px;
+    font-weight: 700;
+}
 
-.umroh-services {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
-    margin: 20px 0;
+
+/* =========================================
+   KOTAK UTAMA SETIAP LAYANAN
+   ========================================= */
+
+.service-box {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.service-group {
+    background: #141b25;
+    border: 1px solid #252d38;
+    border-radius: 28px;
+    padding: 55px 40px 50px;
+    margin-bottom: 40px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================================
+   MENU-MENU KECIL
+   ========================================= */
+
+.service-menu {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 12px;
+    margin-bottom: 45px;
+    flex-wrap: nowrap;
 }
 
 .service-item {
-    border: 1px solid #d6b56d;
-    background: #10161f;
-    color: #ffffff;
-    border-radius: 12px;
-    padding: 12px 5px;
-    cursor: pointer;
-    transition: 0.3s;
-}
+    flex: 1;
+    min-width: 100px;
+    max-width: 170px;
+    min-height: 130px;
 
-.service-item:hover {
-    background: #d6b56d;
-    color: #10161f;
-    transform: translateY(-4px);
-}
-
-.service-icon {
-    display: block;
-    font-size: 25px;
-    margin-bottom: 6px;
-}
-
-.service-item small {
-    font-size: 11px;
-}
-
-
-/* ===============================
-   POPUP LAYANAN
-================================ */
-
-.service-modal {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.75);
-
-    align-items: center;
-    justify-content: center;
-
-    padding: 20px;
-}
-
-.service-modal.active {
     display: flex;
-}
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-.service-modal-box {
-    position: relative;
-    width: 100%;
-    max-width: 430px;
+    padding: 14px 10px;
 
-    background: #151b24;
-    border: 1px solid #d6b56d;
+    background: #111720;
+    border: 2px solid #d9b86c;
     border-radius: 20px;
 
-    padding: 30px 25px;
-    text-align: center;
-
-    box-shadow: 0 15px 50px rgba(0,0,0,0.5);
-
-    animation: servicePopup 0.3s ease;
-}
-
-@keyframes servicePopup {
-    from {
-        opacity: 0;
-        transform: translateY(30px) scale(0.95);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-}
-
-.close-service {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-
-    border: none;
-    background: transparent;
-
-    color: #d6b56d;
-    font-size: 32px;
     cursor: pointer;
-}
 
-.modal-icon {
-    font-size: 45px;
-    margin-bottom: 10px;
-}
-
-.service-modal-box h3 {
-    color: #d6b56d;
-    font-size: 24px;
-    margin-bottom: 15px;
-}
-
-.service-modal-box p {
-    color: #d9d9d9;
-    font-size: 16px;
-    line-height: 1.7;
-    margin-bottom: 25px;
-}
-
-.modal-wa {
-    display: inline-block;
-
-    padding: 12px 20px;
-
-    border: 1px solid #d6b56d;
-    border-radius: 10px;
-
-    color: #d6b56d;
-    text-decoration: none;
-
-    font-weight: bold;
-
-    transition: 0.3s;
-}
-
-.modal-wa:hover {
-    background: #d6b56d;
-    color: #10161f;
-}
-
-
-/* MOBILE */
-
-@media (max-width: 600px) {
-
-    .umroh-services {
-        gap: 6px;
-    }
-
-    .service-item {
-        padding: 9px 3px;
-    }
-
-    .service-icon {
-        font-size: 21px;
-    }
-
-    .service-item small {
-        font-size: 9px;
-    }
-
-    .service-modal-box {
-        padding: 28px 20px;
-    }
-
-}
-
-
-/* =================================
-   EVENT ORGANIZER - FORMAT UMROH
-================================= */
-
-.eo-list {
-    margin: 18px 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.eo-list div {
-    padding: 10px 14px;
-
-    border-left: 3px solid #d6b56d;
-
-    background: rgba(214,181,109,0.06);
-
-    border-radius: 8px;
-
-    color: #c9cbd1;
-
-    font-size: 15px;
-}
-
-.eo-list strong {
-    color: #d6b56d;
-    font-weight: 600;
-}
-
-.service-btn {
-    display: inline-block;
-
-    margin: 5px 20px 22px;
-    padding: 11px 22px;
-
-    border: 1px solid #d6b56d;
-    border-radius: 25px;
-
-    background: transparent;
-    color: #d6b56d;
-
-    text-decoration: none;
-
-    font-size: 15px;
-    font-weight: 600;
-
-    transition: 0.3s ease;
-}
-
-.service-btn:hover {
-    background: #d6b56d;
-    color: #11151b;
-}
-
-/* =================================
-   MUSLIM WEAR - FORMAT UMROH
-================================= */
-
-.muslim-list {
-    margin: 18px 20px;
-
-    display: flex;
-    flex-direction: column;
-
-    gap: 10px;
-}
-
-.muslim-list div {
-    padding: 10px 14px;
-
-    border-left: 3px solid #d6b56d;
-
-    background: rgba(214,181,109,0.06);
-
-    border-radius: 8px;
-
-    color: #c9cbd1;
-
-    font-size: 15px;
-}
-
-.muslim-list strong {
-    color: #d6b56d;
-    font-weight: 600;
-}
-
-/* =====================================
-   SERVICE ITEM - BISA DIKLIK
-   ===================================== */
-
-.service-item {
-    cursor: pointer;
-    transition: 0.3s ease;
-}
-
-.service-item:hover {
-    transform: translateY(-6px);
-    border-color: #d6b56d;
-}
-
-
-/* =====================================
-   POPUP SERVICE
-   ===================================== */
-
-.service-modal {
-    position: fixed;
-
-    inset: 0;
-
-    background: rgba(0, 0, 0, 0.75);
-
-    display: none;
-
-    justify-content: center;
-    align-items: center;
-
-    padding: 20px;
-
-    z-index: 9999;
-}
-
-
-/* POPUP AKTIF */
-
-.service-modal.active {
-    display: flex;
-}
-
-
-/* ISI POPUP */
-
-.service-modal-content {
-    position: relative;
-
-    width: 100%;
-    max-width: 480px;
-
-    background: #151b24;
-
-    border: 1px solid #d6b56d;
-
-    border-radius: 25px;
-
-    padding: 40px 30px;
-
-    text-align: center;
-
-    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-
-    animation: modalShow 0.25s ease;
-}
-
-
-/* ANIMASI */
-
-@keyframes modalShow {
-
-    from {
-        opacity: 0;
-        transform: translateY(20px) scale(0.95);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 
 /* ICON */
 
-.modal-icon {
-    font-size: 55px;
-
+.service-item .icon {
+    font-size: 34px;
+    line-height: 1;
     margin-bottom: 15px;
 }
 
 
-/* JUDUL */
+/* NAMA SERVICE */
 
-.service-modal-content h3 {
-    color: #d6b56d;
-
-    font-size: 27px;
-
-    margin-bottom: 18px;
-}
-
-
-/* DESKRIPSI */
-
-.service-modal-content p {
-    color: #c4c8d0;
-
-    font-size: 16px;
-
-    line-height: 1.7;
-
-    margin-bottom: 28px;
-}
-
-
-/* TOMBOL */
-
-.modal-consultation {
-    display: inline-block;
-
-    background: #d6b56d;
-
-    color: #11161e;
-
-    text-decoration: none;
-
-    padding: 12px 24px;
-
-    border-radius: 30px;
-
-    font-weight: bold;
-
-    transition: 0.3s;
-}
-
-.modal-consultation:hover {
-    transform: translateY(-2px);
-
-    box-shadow: 0 8px 20px rgba(214,181,109,0.25);
-}
-
-
-/* TOMBOL CLOSE */
-
-.modal-close {
-    position: absolute;
-
-    top: 12px;
-    right: 16px;
-
-    background: none;
-
-    border: none;
-
+.service-item span {
     color: #ffffff;
+    font-size: 15px;
+    line-height: 1.4;
+}
 
+
+/* HOVER */
+
+.service-item:hover {
+    transform: translateY(-5px);
+    background: #1c2430;
+    box-shadow: 0 8px 20px rgba(217, 184, 108, 0.18);
+}
+
+
+/* =========================================
+   JUDUL UTAMA LAYANAN
+   ========================================= */
+
+.service-group > h3 {
+    color: #ffffff;
     font-size: 32px;
-
-    cursor: pointer;
-
-    line-height: 1;
-}
-
-.modal-close:hover {
-    color: #d6b56d;
+    line-height: 1.35;
+    margin: 0 auto 28px;
+    max-width: 700px;
 }
 
 
-/* MOBILE */
+/* =========================================
+   DESKRIPSI
+   ========================================= */
+
+.service-group > p {
+    color: #aeb4bd;
+    font-size: 20px;
+    line-height: 1.8;
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
 
 @media (max-width: 768px) {
 
-    .service-modal-content {
-        padding: 35px 22px;
-
-        border-radius: 22px;
+    .services {
+        padding: 60px 15px;
     }
 
-    .modal-icon {
-        font-size: 48px;
+    .services h2 {
+        font-size: 40px;
+        margin-bottom: 55px;
     }
 
-    .service-modal-content h3 {
-        font-size: 24px;
+    .service-group {
+        padding: 40px 20px;
+        border-radius: 24px;
+        margin-bottom: 30px;
     }
 
+    .service-menu {
+        gap: 10px;
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding-bottom: 8px;
+
+        scrollbar-width: none;
+    }
+
+    .service-menu::-webkit-scrollbar {
+        display: none;
+    }
+
+    .service-item {
+        flex: 0 0 105px;
+        min-width: 105px;
+        max-width: 105px;
+        min-height: 125px;
+
+        border-radius: 16px;
+        padding: 12px 8px;
+    }
+
+    .service-item .icon {
+        font-size: 30px;
+        margin-bottom: 12px;
+    }
+
+    .service-item span {
+        font-size: 14px;
+    }
+
+    .service-group > h3 {
+        font-size: 28px;
+    }
+
+    .service-group > p {
+        font-size: 18px;
+        line-height: 1.7;
+    }
 }
+
+
+/* =========================================
+   HP KECIL
+   ========================================= */
+
+@media (max-width: 480px) {
+
+    .services h2 {
+        font-size: 36px;
+    }
+
+    .service-group {
+        padding: 35px 15px;
+    }
+
+    .service-item {
+        flex-basis: 100px;
+        min-width: 100px;
+        min-height: 120px;
+    }
+
+    .service-group > h3 {
+        font-size: 25px;
+    }
+
+    .service-group > p {
+        font-size: 17px;
+    }
+                                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
