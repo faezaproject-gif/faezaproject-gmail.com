@@ -1,127 +1,242 @@
-// ===============================
-// MENU MOBILE
-// ===============================
+/* ========================================
+   FAEZA PROJECT
+   MAIN JAVASCRIPT
+======================================== */
+
+
+/* ========================================
+   NAVBAR MOBILE
+======================================== */
 
 const menuButton = document.getElementById("menuButton");
 const navMenu = document.getElementById("navMenu");
 
-menuButton.addEventListener("click", function () {
-    navMenu.classList.toggle("active");
-});
+if (menuButton && navMenu) {
+
+    menuButton.addEventListener("click", function () {
+        navMenu.classList.toggle("active");
+    });
 
 
-// ===============================
-// TUTUP MENU SETELAH LINK DIKLIK
-// ===============================
+    // Tutup menu setelah memilih navigasi
+    const navLinks = navMenu.querySelectorAll("a");
 
-const navLinks = navMenu.querySelectorAll("a");
+    navLinks.forEach(function (link) {
 
-navLinks.forEach(function (link) {
+        link.addEventListener("click", function () {
+            navMenu.classList.remove("active");
+        });
 
-    link.addEventListener("click", function () {
+    });
 
-        navMenu.classList.remove("active");
+}
+
+
+/* ========================================
+   SERVICE POPUP
+======================================== */
+
+const serviceItems = document.querySelectorAll(".service-item");
+
+
+/* Membuat popup */
+
+const servicePopup = document.createElement("div");
+
+servicePopup.className = "service-popup";
+
+servicePopup.innerHTML = `
+
+    <div class="service-popup-overlay"></div>
+
+    <div class="service-popup-box">
+
+        <button class="service-popup-close"
+                aria-label="Tutup">
+            ×
+        </button>
+
+        <div class="service-popup-icon">
+        </div>
+
+        <h3 class="service-popup-title">
+        </h3>
+
+        <p class="service-popup-description">
+        </p>
+
+        <a class="service-popup-wa"
+           href="#"
+           target="_blank"
+           rel="noopener">
+            💬 KONSULTASI VIA WHATSAPP
+        </a>
+
+    </div>
+
+`;
+
+document.body.appendChild(servicePopup);
+
+
+/* ========================================
+   ELEMENT POPUP
+======================================== */
+
+const popupOverlay =
+    servicePopup.querySelector(".service-popup-overlay");
+
+const popupBox =
+    servicePopup.querySelector(".service-popup-box");
+
+const popupClose =
+    servicePopup.querySelector(".service-popup-close");
+
+const popupIcon =
+    servicePopup.querySelector(".service-popup-icon");
+
+const popupTitle =
+    servicePopup.querySelector(".service-popup-title");
+
+const popupDescription =
+    servicePopup.querySelector(".service-popup-description");
+
+const popupWhatsApp =
+    servicePopup.querySelector(".service-popup-wa");
+
+
+/* ========================================
+   NOMOR WHATSAPP FAEZA PROJECT
+======================================== */
+
+const whatsappNumber = "6285715612700";
+
+
+/* ========================================
+   BUKA POPUP SERVICE
+======================================== */
+
+serviceItems.forEach(function (service) {
+
+    service.addEventListener("click", function () {
+
+        const title =
+            service.getAttribute("data-title");
+
+        const icon =
+            service.getAttribute("data-icon");
+
+        const description =
+            service.getAttribute("data-description");
+
+
+        /* Isi popup */
+
+        popupIcon.textContent = icon;
+
+        popupTitle.textContent = title;
+
+        popupDescription.textContent = description;
+
+
+        /* Pesan WhatsApp otomatis */
+
+        const message =
+            `Assalamualaikum Faeza Project, saya ingin konsultasi mengenai layanan ${title}.`;
+
+
+        const whatsappURL =
+            `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+
+        popupWhatsApp.href = whatsappURL;
+
+
+        /* Tampilkan popup */
+
+        servicePopup.classList.add("active");
+
+        document.body.classList.add("popup-open");
 
     });
 
 });
 
 
-// ===============================
-// SMOOTH SCROLL
-// ===============================
+/* ========================================
+   TUTUP POPUP
+======================================== */
 
-document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+function closeServicePopup() {
 
-    link.addEventListener("click", function (e) {
+    servicePopup.classList.remove("active");
 
-        const target = document.querySelector(
-            this.getAttribute("href")
-        );
+    document.body.classList.remove("popup-open");
 
-        if (target) {
-
-            e.preventDefault();
-
-            target.scrollIntoView({
-                behavior: "smooth"
-            });
-
-        }
-
-    });
-
-});
-
-function showService(service) {
-
-    const modal = document.getElementById("serviceModal");
-    const title = document.getElementById("serviceModalTitle");
-    const text = document.getElementById("serviceModalText");
-    const icon = document.getElementById("serviceModalIcon");
-
-    const services = {
-
-        visa: {
-            icon: "🎫",
-            title: "Tiket & Visa",
-            text: "Bantuan informasi dan persiapan dokumen perjalanan serta kebutuhan visa Umroh."
-        },
-
-        transport: {
-            icon: "🚌",
-            title: "Transportasi",
-            text: "Informasi dan pengaturan transportasi selama perjalanan Umroh agar perjalanan jamaah lebih nyaman."
-        },
-
-        hotel: {
-            icon: "🏨",
-            title: "Hotel",
-            text: "Informasi pilihan akomodasi yang nyaman dan sesuai dengan kebutuhan jamaah selama berada di Tanah Suci."
-        },
-
-        catering: {
-            icon: "🍽️",
-            title: "Katering",
-            text: "Informasi layanan konsumsi selama perjalanan untuk membantu memenuhi kebutuhan jamaah."
-        },
-
-        guide: {
-            icon: "👥",
-            title: "Pembimbing",
-            text: "Pendampingan dan bimbingan perjalanan ibadah agar jamaah lebih nyaman, terarah, dan mendapatkan informasi yang dibutuhkan."
-        }
-
-    };
-
-    const selected = services[service];
-
-    if (!selected) return;
-
-    icon.textContent = selected.icon;
-    title.textContent = selected.title;
-    text.textContent = selected.text;
-
-    modal.classList.add("active");
 }
 
 
-function closeService() {
+/* Tombol X */
 
-    const modal = document.getElementById("serviceModal");
+popupClose.addEventListener(
+    "click",
+    closeServicePopup
+);
 
-    modal.classList.remove("active");
-}
+
+/* Klik area luar */
+
+popupOverlay.addEventListener(
+    "click",
+    closeServicePopup
+);
 
 
-/* Tutup popup jika klik area luar */
+/* Tekan ESC */
 
-document.addEventListener("click", function(event) {
+document.addEventListener(
+    "keydown",
+    function (event) {
 
-    const modal = document.getElementById("serviceModal");
+        if (
+            event.key === "Escape" &&
+            servicePopup.classList.contains("active")
+        ) {
 
-    if (event.target === modal) {
-        closeService();
+            closeServicePopup();
+
+        }
+
     }
+);
 
-});
+
+/* ========================================
+   PWA SERVICE WORKER
+======================================== */
+
+if ("serviceWorker" in navigator) {
+
+    window.addEventListener(
+        "load",
+        function () {
+
+            navigator.serviceWorker
+                .register("service-worker.js")
+                .catch(function (error) {
+
+                    console.log(
+                        "Service Worker gagal:",
+                        error
+                    );
+
+                });
+
+        }
+    );
+
+}
+
+
+
+    
