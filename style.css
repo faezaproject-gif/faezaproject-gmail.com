@@ -532,12 +532,7 @@ footer a {
         padding: 70px 6%;
     }
 
-
-    .service-box {
-        grid-template-columns:
-            repeat(2, 1fr);
-    }
-
+   
 
     .portfolio-grid {
         grid-template-columns: 1fr;
@@ -557,10 +552,7 @@ footer a {
 ======================================== */
 
 @media (max-width: 480px) {
-
-    .service-box {
-        grid-template-columns: 1fr;
-    }
+   
 
     .process-grid {
         grid-template-columns: 1fr;
@@ -706,9 +698,9 @@ footer a {
 }
 
 
-
 /* ========================================
-   FAEZA PROJECT - LAYANAN
+   FAEZA PROJECT
+   LAYANAN KAMI
 ======================================== */
 
 .services {
@@ -721,51 +713,65 @@ footer a {
 
     display: flex;
     flex-direction: column;
+
     gap: 24px;
 }
 
 
-/* KARTU KATEGORI */
+/* ========================================
+   KATEGORI LAYANAN
+======================================== */
 
-.service-category {
+.service-group {
+    width: 100%;
+
     background: #151b24;
 
     border: 1px solid rgba(255, 255, 255, 0.08);
 
     border-radius: 20px;
 
-    padding: 28px 22px 30px;
+    padding: 28px 20px 30px;
 
     text-align: center;
 
     transition: 0.3s ease;
 }
 
-.service-category:hover {
+.service-group:hover {
     border-color: rgba(214, 181, 109, 0.45);
 }
 
 
-/* BARIS SERVICE */
+/* ========================================
+   BARIS KOTAK SERVICE
+======================================== */
 
-.service-grid {
+.service-menu {
     display: flex;
 
     justify-content: center;
+    align-items: stretch;
 
     gap: 10px;
 
-    margin-bottom: 30px;
+    margin-bottom: 28px;
+
+    flex-wrap: nowrap;
 }
 
 
-/* KOTAK KECIL */
+/* ========================================
+   KOTAK SERVICE
+======================================== */
 
 .service-item {
     width: 105px;
-    min-height: 115px;
+    min-width: 105px;
+    min-height: 105px;
 
     display: flex;
+
     flex-direction: column;
 
     align-items: center;
@@ -779,25 +785,29 @@ footer a {
 
     border-radius: 16px;
 
+    text-align: center;
+
     cursor: pointer;
 
-    transition: 0.3s ease;
+    transition: 0.25s ease;
 }
 
 .service-item:hover {
     transform: translateY(-4px);
 
-    background: #191f29;
+    background: #1b222d;
 
     box-shadow:
         0 8px 20px rgba(214, 181, 109, 0.15);
 }
 
 
-/* ICON */
+/* ========================================
+   ICON SERVICE
+======================================== */
 
 .service-item .icon {
-    font-size: 30px;
+    font-size: 28px;
 
     line-height: 1;
 
@@ -805,38 +815,46 @@ footer a {
 }
 
 
-/* NAMA SERVICE */
+/* ========================================
+   NAMA SERVICE
+======================================== */
 
-.service-item h3 {
+.service-item span {
+    display: block;
+
+    width: 100%;
+
     color: #ffffff;
 
-    font-size: 12px;
+    font-size: 11px;
 
-    line-height: 1.35;
+    line-height: 1.3;
 
-    margin: 0;
-
-    font-weight: 500;
+    text-align: center;
 }
 
 
-/* JUDUL KATEGORI */
+/* ========================================
+   JUDUL KATEGORI
+======================================== */
 
-.service-category > h3 {
+.service-group > h3 {
     color: #ffffff;
 
-    font-size: 27px;
-
-    margin: 0 0 15px;
+    font-size: 26px;
 
     line-height: 1.4;
+
+    margin: 0 0 14px;
 }
 
 
-/* DESKRIPSI */
+/* ========================================
+   DESKRIPSI KATEGORI
+======================================== */
 
-.service-category > p {
-    max-width: 680px;
+.service-group > p {
+    max-width: 700px;
 
     margin: auto;
 
@@ -852,7 +870,7 @@ footer a {
    MOBILE
 ======================================== */
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
 
     .services {
         padding-left: 15px;
@@ -865,22 +883,23 @@ footer a {
         gap: 18px;
     }
 
-    .service-category {
-        width: 100%;
-
-        padding: 22px 8px 26px;
+    .service-group {
+        padding: 22px 7px 25px;
 
         border-radius: 18px;
     }
 
-    .service-grid {
+    .service-menu {
         gap: 5px;
 
-        margin-bottom: 24px;
+        margin-bottom: 23px;
+
+        justify-content: center;
     }
 
     .service-item {
-        width: 64px;
+        width: 62px;
+        min-width: 62px;
 
         min-height: 92px;
 
@@ -895,26 +914,30 @@ footer a {
         margin-bottom: 7px;
     }
 
-    .service-item h3 {
-        font-size: 9px;
+    .service-item span {
+        font-size: 8.5px;
 
         line-height: 1.3;
     }
 
-    .service-category > h3 {
-        font-size: 22px;
+    .service-group > h3 {
+        font-size: 21px;
 
-        margin-bottom: 12px;
+        margin-bottom: 11px;
     }
 
-    .service-category > p {
+    .service-group > p {
         font-size: 14px;
 
         line-height: 1.7;
 
         padding: 0 8px;
     }
-   }
+}
+
+
+
+
 
 
 
