@@ -936,7 +936,27 @@ footer a {
 }
 
 
+/* ========================================
+   FAEZA GOLD CONSULTATION BUTTON
+======================================== */
 
+a.btn {
+    background: #d6b56d !important;
+
+    color: #111111 !important;
+
+    border: 1px solid #d6b56d !important;
+
+    text-decoration: none !important;
+}
+
+a.btn:hover {
+    background: #e3c57a !important;
+
+    color: #111111 !important;
+
+    border-color: #e3c57a !important;
+}
 
 
 
