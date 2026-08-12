@@ -1379,7 +1379,380 @@ footer a {
 }
     
 
+/* ========================================
+   FAEZA PROJECT
+   PORTFOLIO PREMIUM
+======================================== */
 
+.portfolio-section {
+    position: relative;
+    padding: 90px 20px;
+    background: #111111;
+    overflow: hidden;
+}
+
+.portfolio-section::before {
+    content: "";
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    top: -220px;
+    right: -180px;
+    border: 1px solid rgba(212, 175, 55, 0.18);
+    border-radius: 50%;
+}
+
+.portfolio-header {
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.portfolio-label {
+    display: inline-block;
+    margin-bottom: 14px;
+    color: #d4af37;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.portfolio-header h2 {
+    margin: 0 0 16px;
+    color: #ffffff;
+    font-size: clamp(30px, 5vw, 46px);
+    line-height: 1.2;
+}
+
+.portfolio-header p {
+    max-width: 650px;
+    margin: 0 auto;
+    color: #bdbdbd;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+
+/* ========================================
+   GRID
+======================================== */
+
+.portfolio-grid {
+    position: relative;
+    z-index: 1;
+
+    width: min(1180px, 100%);
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+}
+
+
+/* ========================================
+   CARD
+======================================== */
+
+.portfolio-card {
+    position: relative;
+
+    overflow: hidden;
+
+    background: #181818;
+
+    border: 1px solid rgba(212, 175, 55, 0.18);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.28);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-7px);
+
+    border-color:
+        rgba(212, 175, 55, 0.55);
+
+    box-shadow:
+        0 25px 55px rgba(0, 0, 0, 0.42);
+}
+
+
+/* ========================================
+   NUMBER
+======================================== */
+
+.portfolio-number {
+    position: absolute;
+
+    top: 18px;
+    left: 18px;
+
+    z-index: 5;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255,255,255,0.35);
+
+    border-radius: 50%;
+
+    background: rgba(0,0,0,0.55);
+
+    color: #d4af37;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* ========================================
+   IMAGE
+======================================== */
+
+.portfolio-image {
+    position: relative;
+
+    height: 290px;
+
+    overflow: hidden;
+
+    background: #222;
+}
+
+.portfolio-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.5s ease;
+}
+
+.portfolio-card:hover
+.portfolio-image img {
+    transform: scale(1.05);
+}
+
+
+/* ========================================
+   IMAGE OVERLAY
+======================================== */
+
+.portfolio-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+    align-items: flex-end;
+
+    padding: 24px;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,0.75),
+            rgba(0,0,0,0.05) 60%,
+            transparent
+        );
+}
+
+.portfolio-overlay span {
+    color: #ffffff;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+/* ========================================
+   CONTENT
+======================================== */
+
+.portfolio-content {
+    padding: 26px 26px 30px;
+}
+
+.portfolio-category {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: #d4af37;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.portfolio-content h3 {
+    margin: 0 0 11px;
+
+    color: #ffffff;
+
+    font-size: 23px;
+}
+
+.portfolio-content p {
+    margin: 0;
+
+    color: #b7b7b7;
+
+    font-size: 14px;
+
+    line-height: 1.75;
+}
+
+
+/* ========================================
+   BOTTOM QUOTE
+======================================== */
+
+.portfolio-bottom {
+    position: relative;
+    z-index: 1;
+
+    width: min(900px, 100%);
+
+    margin: 60px auto 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 18px;
+
+    text-align: center;
+}
+
+.portfolio-bottom p {
+    margin: 0;
+
+    color: #d4af37;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    line-height: 1.7;
+}
+
+.portfolio-line {
+    width: 70px;
+    height: 1px;
+
+    background:
+        rgba(212, 175, 55, 0.5);
+}
+
+
+/* ========================================
+   RESPONSIVE TABLET
+======================================== */
+
+@media (max-width: 800px) {
+
+    .portfolio-section {
+        padding:
+            70px
+            18px;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-image {
+        height: 320px;
+    }
+
+}
+
+
+/* ========================================
+   RESPONSIVE HP
+======================================== */
+
+@media (max-width: 480px) {
+
+    .portfolio-section {
+        padding:
+            60px
+            14px;
+    }
+
+    .portfolio-header {
+        margin-bottom: 38px;
+    }
+
+    .portfolio-header h2 {
+        font-size: 29px;
+    }
+
+    .portfolio-header p {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .portfolio-grid {
+        gap: 20px;
+    }
+
+    .portfolio-image {
+        height: 240px;
+    }
+
+    .portfolio-content {
+        padding:
+            22px
+            20px
+            24px;
+    }
+
+    .portfolio-content h3 {
+        font-size: 20px;
+    }
+
+    .portfolio-content p {
+        font-size: 13px;
+    }
+
+    .portfolio-bottom {
+        margin-top: 42px;
+        gap: 10px;
+    }
+
+    .portfolio-line {
+        width: 30px;
+    }
+
+    .portfolio-bottom p {
+        font-size: 8px;
+        letter-spacing: 1.3px;
+    }
+
+               }
 
 
 
