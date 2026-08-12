@@ -1854,5 +1854,66 @@ footer a {
 
 }
 
+/* ========================================
+   PORTFOLIO
+   UKURAN GAMBAR SERAGAM & KARTU DISAMAKAN
+======================================== */
 
+.portfolio-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.portfolio-image {
+    width: 100%;
+    height: 300px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background: #ffffff;
+}
+
+.portfolio-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center;
+
+    display: block;
+}
+
+
+/* ========================================
+   ISI KARTU
+======================================== */
+
+.portfolio-content {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.portfolio-content p {
+    margin-top: auto;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 480px) {
+
+    .portfolio-image {
+        height: 250px;
+    }
+
+}
 
