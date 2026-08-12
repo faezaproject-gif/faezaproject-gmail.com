@@ -3123,3 +3123,141 @@ footer a {
     }
 
 }
+
+/* ========================================
+   INFORMASI
+======================================== */
+
+.info-links {
+    max-width: 1100px;
+    margin: 38px auto 0;
+    padding-top: 25px;
+
+    border-top: 1px solid #eee;
+}
+
+.info-title {
+    margin-bottom: 18px;
+
+    text-align: center;
+}
+
+.info-title span {
+    color: #b8860b;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+/* CONTAINER */
+
+.info-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 12px;
+}
+
+/* LINK */
+
+.info-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 13px 10px;
+
+    color: #555;
+    background: #fafafa;
+
+    border: 1px solid #eee;
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+}
+
+/* ICON */
+
+.info-icon {
+    font-size: 15px;
+
+    transition: transform 0.3s ease;
+}
+
+/* HOVER */
+
+.info-link:hover {
+    color: #a67c00;
+
+    background: #fffdf5;
+
+    border-color: #d4b04c;
+
+    transform: translateY(-3px);
+}
+
+.info-link:hover .info-icon {
+    transform: scale(1.1);
+}
+
+
+/* ========================================
+   INFORMASI - TABLET
+======================================== */
+
+@media (max-width: 900px) {
+
+    .info-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* ========================================
+   INFORMASI - MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+    .info-links {
+        margin-top: 28px;
+        padding-top: 20px;
+    }
+
+    .info-title {
+        margin-bottom: 14px;
+    }
+
+    .info-title span {
+        font-size: 10px;
+    }
+
+    .info-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 9px;
+    }
+
+    .info-link {
+        min-height: 42px;
+
+        padding: 9px 6px;
+
+        gap: 5px;
+
+        font-size: 10px;
+    }
+
+    .info-icon {
+        font-size: 13px;
+    }
+
+}
