@@ -1338,7 +1338,20 @@ body.popup-open {
         }
 
 
+/* =========================
+   JAM OPERASIONAL
+========================= */
 
+.operating-hours {
+    line-height: 1.8;
+}
+
+.operating-hours strong {
+    display: block;
+    margin-top: 4px;
+    color: #d4af37;
+    font-weight: 600;
+}
 
 
 
