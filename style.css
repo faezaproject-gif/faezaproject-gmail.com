@@ -1916,3 +1916,81 @@ footer a {
     }
 
 }
+
+/* ========================================
+   PORTFOLIO - PENYAMAAN VISUAL GAMBAR
+======================================== */
+
+.portfolio-image {
+    width: 100%;
+    height: 300px !important;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background: #ffffff;
+}
+
+.portfolio-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain !important;
+    object-position: center;
+
+    display: block;
+}
+
+
+/* ========================================
+   KHUSUS CUSTOM SERAGAM
+======================================== */
+
+/* Kartu ke-5 = Custom Seragam */
+
+.portfolio-card:nth-child(5)
+.portfolio-image img {
+
+    width: 92%;
+    height: 92%;
+
+    object-fit: contain !important;
+}
+
+
+/* ========================================
+   SEMUA KARTU AGAR ISINYA SEIMBANG
+======================================== */
+
+.portfolio-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.portfolio-content {
+    flex: 1;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 480px) {
+
+    .portfolio-image {
+        height: 250px !important;
+    }
+
+    .portfolio-card:nth-child(5)
+    .portfolio-image img {
+
+        width: 92%;
+        height: 92%;
+
+    }
+
+   }
