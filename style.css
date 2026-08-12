@@ -4684,48 +4684,65 @@ footer a {
     }
 }
 
+/* =========================================
+   LAYANAN KAMI - MOBILE
+   3 CARD ATAS + 2 CARD TENGAH
+   PROPORTIONAL
+========================================= */
+
 @media (max-width: 600px) {
 
     .service-menu {
         display: grid;
 
-        grid-template-columns:
-            repeat(6, 1fr);
+        grid-template-columns: repeat(6, minmax(0, 1fr));
 
-        gap: 10px;
+        column-gap: 10px;
+        row-gap: 12px;
 
-        max-width: 390px;
+        width: 100%;
+
+        max-width: 500px;
 
         margin: 0 auto;
 
-        padding: 5px;
+        padding: 5px 0;
 
         box-sizing: border-box;
+
+        overflow: visible;
     }
 
     .service-item {
+        width: 100%;
         min-width: 0;
+        max-width: none;
 
-        min-height: 105px;
+        height: 112px;
+        min-height: 112px;
 
-        padding: 10px 5px;
+        padding: 10px 8px;
+
+        box-sizing: border-box;
 
         display: flex;
-
         flex-direction: column;
 
         align-items: center;
-
         justify-content: center;
 
         text-align: center;
 
-        cursor: pointer;
+        border-radius: 14px;
 
+        cursor: pointer;
         pointer-events: auto;
     }
 
-    /* 3 CARD ATAS */
+
+    /* =========================
+       3 CARD BARIS ATAS
+    ========================= */
 
     .service-item:nth-child(1) {
         grid-column: 1 / 3;
@@ -4739,7 +4756,11 @@ footer a {
         grid-column: 5 / 7;
     }
 
-    /* 2 CARD BAWAH - TENGAH */
+
+    /* =========================
+       2 CARD BARIS BAWAH
+       TENGAH
+    ========================= */
 
     .service-item:nth-child(4) {
         grid-column: 2 / 4;
@@ -4749,4 +4770,31 @@ footer a {
         grid-column: 4 / 6;
     }
 
-   }
+
+    /* =========================
+       ICON
+    ========================= */
+
+    .service-item .icon {
+        font-size: 27px;
+
+        line-height: 1;
+
+        margin-bottom: 8px;
+    }
+
+
+    /* =========================
+       TEXT
+    ========================= */
+
+    .service-item span {
+        width: 100%;
+
+        font-size: 10.5px;
+
+        line-height: 1.35;
+
+        text-align: center;
+    }
+}
