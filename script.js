@@ -82,6 +82,30 @@ document.querySelectorAll('a[href^="#"]').forEach(function (link) {
 const whatsappNumber =
     "6285715612700";
 
+/* ========================================
+   WHATSAPP TRACKING
+======================================== */
+
+function openWhatsApp(message, source = "website") {
+
+    const url =
+        "https://wa.me/" +
+        whatsappNumber +
+        "?text=" +
+        encodeURIComponent(message);
+
+    console.log(
+        "WhatsApp consultation:",
+        source
+    );
+
+    window.open(
+        url,
+        "_blank",
+        "noopener,noreferrer"
+    );
+}
+
 
 /* ========================================
    DATA KARTU LAYANAN
