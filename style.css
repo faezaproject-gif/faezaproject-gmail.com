@@ -1354,7 +1354,29 @@ body.popup-open {
 }
 
 
+/* =========================
+   FOOTER - KONTAK
+========================= */
 
+footer h3 {
+    color: #ffffff;
+}
+
+footer a {
+    color: #d4af37;
+}
+
+.operating-hours {
+    line-height: 1.8;
+    color: #ffffff;
+}
+
+.operating-hours strong {
+    display: block;
+    margin-top: 4px;
+    color: #d4af37;
+    font-weight: 600;
+}
     
 
 
