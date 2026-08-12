@@ -2362,3 +2362,515 @@ footer a {
     }
 
        }
+
+
+
+/* ========================================
+   FAEZA PROJECT
+   FINAL MOBILE OPTIMIZATION
+   KHUSUS LAYAR HP
+======================================== */
+
+@media (max-width: 768px) {
+
+    /* =====================================
+       GLOBAL
+    ===================================== */
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    section {
+        width: 100%;
+        max-width: 100%;
+    }
+
+
+    /* =====================================
+       NAVBAR
+    ===================================== */
+
+    .navbar {
+        width: 100%;
+        min-height: 64px;
+
+        padding: 10px 16px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        box-sizing: border-box;
+    }
+
+    .brand {
+        max-width: calc(100% - 55px);
+
+        font-size: 17px;
+
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .menu-toggle {
+        width: 42px;
+        height: 42px;
+
+        flex-shrink: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    /* =====================================
+       SECTION UMUM
+    ===================================== */
+
+    section {
+        padding-left: 16px;
+        padding-right: 16px;
+        box-sizing: border-box;
+    }
+
+    h1,
+    h2,
+    h3 {
+        max-width: 100%;
+        word-wrap: break-word;
+    }
+
+
+    /* =====================================
+       HERO
+    ===================================== */
+
+    .hero {
+        min-height: auto;
+
+        padding:
+            70px
+            18px
+            60px;
+
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: clamp(30px, 9vw, 42px);
+
+        line-height: 1.2;
+    }
+
+    .hero p {
+        font-size: 14px;
+
+        line-height: 1.7;
+    }
+
+
+    /* =====================================
+       JUDUL SECTION
+    ===================================== */
+
+    .section-title,
+    .portfolio-header h2,
+    .services-title,
+    .process-title,
+    .contact-title {
+        font-size: 30px;
+
+        line-height: 1.25;
+
+        letter-spacing: 1px;
+    }
+
+    .portfolio-header {
+        padding-left: 5px;
+        padding-right: 5px;
+
+        margin-bottom: 32px;
+    }
+
+    .portfolio-header p {
+        font-size: 13px;
+
+        line-height: 1.7;
+    }
+
+
+    /* =====================================
+       LAYANAN
+    ===================================== */
+
+    .services-grid,
+    .service-grid {
+        grid-template-columns: 1fr !important;
+
+        gap: 18px !important;
+    }
+
+    .service-card {
+        width: 100%;
+
+        min-height: auto;
+
+        padding: 22px 18px;
+
+        box-sizing: border-box;
+    }
+
+    .service-card h3 {
+        font-size: 20px;
+
+        line-height: 1.35;
+    }
+
+    .service-card p {
+        font-size: 13px;
+
+        line-height: 1.7;
+    }
+
+
+    /* =====================================
+       POPUP LAYANAN
+    ===================================== */
+
+    .service-popup,
+    .modal,
+    .popup {
+        width: 100%;
+
+        max-width: 100%;
+
+        box-sizing: border-box;
+
+        padding: 15px;
+    }
+
+    .service-popup-content,
+    .modal-content,
+    .popup-content {
+        width: min(92vw, 420px);
+
+        max-height: 85vh;
+
+        overflow-y: auto;
+
+        box-sizing: border-box;
+
+        padding: 22px 18px;
+    }
+
+    .service-popup-content h3,
+    .modal-content h3,
+    .popup-content h3 {
+        font-size: 21px;
+
+        line-height: 1.35;
+    }
+
+    .service-popup-content p,
+    .modal-content p,
+    .popup-content p {
+        font-size: 14px;
+
+        line-height: 1.7;
+    }
+
+
+    /* =====================================
+       PORTFOLIO
+    ===================================== */
+
+    .portfolio-section {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .portfolio-grid {
+        width: 100%;
+
+        margin: 30px auto;
+
+        padding: 0;
+
+        grid-template-columns: 1fr !important;
+
+        gap: 20px !important;
+    }
+
+    .portfolio-card {
+        width: 100%;
+
+        display: flex !important;
+
+        flex-direction: column !important;
+
+        min-height: 0 !important;
+
+        box-sizing: border-box;
+    }
+
+    .portfolio-card .portfolio-image {
+        width: 100%;
+
+        height: 250px !important;
+
+        min-height: 250px !important;
+        max-height: 250px !important;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        overflow: hidden;
+
+        box-sizing: border-box;
+
+        background: #ffffff;
+    }
+
+    .portfolio-card .portfolio-image img {
+        width: 100% !important;
+        height: 100% !important;
+
+        max-width: 100%;
+        max-height: 100%;
+
+        object-fit: contain !important;
+
+        object-position: center;
+
+        display: block;
+
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .portfolio-card .portfolio-content {
+        width: 100%;
+
+        min-height: 0 !important;
+
+        padding: 22px 18px 25px;
+
+        box-sizing: border-box;
+
+        display: block;
+    }
+
+    .portfolio-card .portfolio-content h3 {
+        margin: 7px 0 11px;
+
+        font-size: 21px;
+
+        line-height: 1.35;
+    }
+
+    .portfolio-card .portfolio-content p {
+        margin: 0;
+
+        font-size: 13px;
+
+        line-height: 1.7;
+    }
+
+    .portfolio-card .portfolio-category {
+        font-size: 9px;
+
+        letter-spacing: 1.4px;
+    }
+
+    .portfolio-card .portfolio-number {
+        width: 38px;
+        height: 38px;
+
+        top: 14px;
+        left: 14px;
+
+        font-size: 11px;
+    }
+
+    .portfolio-bottom {
+        margin-top: 38px;
+
+        gap: 8px;
+
+        padding: 0 5px;
+    }
+
+    .portfolio-bottom p {
+        font-size: 8px;
+
+        line-height: 1.6;
+
+        letter-spacing: 1px;
+    }
+
+    .portfolio-line {
+        width: 25px;
+    }
+
+
+    /* =====================================
+       PROSES KERJA
+    ===================================== */
+
+    .process-grid,
+    .process-container {
+        grid-template-columns: 1fr !important;
+
+        gap: 18px !important;
+    }
+
+    .process-card {
+        width: 100%;
+
+        box-sizing: border-box;
+
+        padding: 22px 18px;
+    }
+
+    .process-card h3 {
+        font-size: 19px;
+    }
+
+    .process-card p {
+        font-size: 13px;
+
+        line-height: 1.7;
+    }
+
+
+    /* =====================================
+       KONTAK
+    ===================================== */
+
+    .contact-section {
+        padding-top: 60px;
+        padding-bottom: 50px;
+    }
+
+    .contact-card {
+        width: 100%;
+
+        box-sizing: border-box;
+
+        padding: 25px 18px;
+    }
+
+    .contact-card h3 {
+        font-size: 21px;
+    }
+
+    .contact-card p {
+        font-size: 13px;
+
+        line-height: 1.7;
+    }
+
+
+    /* =====================================
+       FOOTER
+    ===================================== */
+
+    footer {
+        width: 100%;
+
+        padding:
+            35px
+            16px
+            25px;
+
+        box-sizing: border-box;
+
+        text-align: center;
+    }
+
+    footer h3 {
+        font-size: 20px;
+    }
+
+    footer p {
+        font-size: 13px;
+
+        line-height: 1.7;
+    }
+
+    footer a {
+        word-break: break-word;
+    }
+
+
+    /* =====================================
+       TOMBOL WHATSAPP / CTA
+    ===================================== */
+
+    .btn,
+    .cta-button,
+    .consultation-button,
+    .wa-button {
+        max-width: 100%;
+
+        box-sizing: border-box;
+
+        white-space: normal;
+
+        text-align: center;
+    }
+
+}
+
+
+/* ========================================
+   HP KECIL
+======================================== */
+
+@media (max-width: 480px) {
+
+    .hero {
+        padding:
+            60px
+            14px
+            50px;
+    }
+
+    .hero h1 {
+        font-size: 29px;
+    }
+
+    .section-title,
+    .portfolio-header h2,
+    .services-title,
+    .process-title,
+    .contact-title {
+        font-size: 27px;
+    }
+
+    .portfolio-card .portfolio-image {
+        height: 235px !important;
+
+        min-height: 235px !important;
+        max-height: 235px !important;
+    }
+
+    .portfolio-card .portfolio-content {
+        padding:
+            20px
+            16px
+            23px;
+    }
+
+}
