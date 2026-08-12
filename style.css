@@ -5201,6 +5201,151 @@ img {
 
 }
 
+/* ========================================
+   FAEZA PROJECT
+   NAVBAR MOBILE - FINAL
+======================================== */
 
+@media (max-width: 768px) {
+
+    /* NAVBAR */
+
+    .navbar {
+        position: sticky;
+        top: 0;
+        z-index: 9999;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        width: 100%;
+        min-height: 64px;
+
+        padding: 10px 16px;
+
+        box-sizing: border-box;
+    }
+
+
+    /* BRAND */
+
+    .navbar .brand {
+        max-width: calc(100% - 55px);
+
+        font-size: 17px;
+
+        white-space: nowrap;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+
+    /* TOMBOL ☰ */
+
+    .navbar .menu {
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        width: 42px;
+        height: 42px;
+
+        flex-shrink: 0;
+
+        font-size: 28px;
+
+        cursor: pointer;
+
+        color: #ffffff;
+
+        z-index: 10001;
+
+        user-select: none;
+    }
+
+
+    /* DAFTAR MENU */
+
+    .navbar ul {
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+
+        display: none;
+
+        flex-direction: column;
+
+        gap: 0;
+
+        margin: 0;
+        padding: 8px 0;
+
+        list-style: none;
+
+        background: #ffffff;
+
+        box-shadow:
+            0 10px 25px rgba(0, 0, 0, 0.18);
+
+        z-index: 10000;
+    }
+
+
+    /* MENU AKTIF */
+
+    .navbar ul.active {
+        display: flex;
+    }
+
+
+    /* ITEM */
+
+    .navbar ul li {
+        width: 100%;
+    }
+
+
+    .navbar ul li a {
+        display: block;
+
+        width: 100%;
+
+        padding: 14px 20px;
+
+        box-sizing: border-box;
+
+        color: #222222;
+
+        font-size: 14px;
+
+        font-weight: 600;
+
+        text-decoration: none;
+
+        text-align: left;
+    }
+
+
+    .navbar ul li a:hover,
+    .navbar ul li a:active {
+        background: rgba(214, 181, 109, 0.15);
+
+        color: #b28a3e;
+    }
+
+
+    /* JARAK SCROLL */
+
+    section {
+        scroll-margin-top: 75px;
+    }
+
+}
 
 
