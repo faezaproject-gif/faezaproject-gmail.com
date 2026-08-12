@@ -4259,4 +4259,189 @@ footer a {
 }
 
 
-        
+      /* =========================================
+   FAEZA PROJECT - FINAL FUNCTION FIX
+========================================= */
+
+/* ---------- MOBILE NAVBAR ---------- */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        position: sticky;
+        top: 0;
+        z-index: 10000;
+    }
+
+    .navbar .menu {
+        display: block;
+        position: relative;
+        z-index: 10002;
+        cursor: pointer;
+        pointer-events: auto;
+    }
+
+    .navbar ul {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+
+        display: none;
+
+        flex-direction: column;
+
+        margin: 0;
+        padding: 0;
+
+        background: #0d1117;
+
+        z-index: 10001;
+    }
+
+    .navbar ul.active {
+        display: flex !important;
+    }
+
+    .navbar ul li {
+        width: 100%;
+    }
+
+    .navbar ul li a {
+        display: block;
+        width: 100%;
+
+        padding: 15px 20px;
+
+        box-sizing: border-box;
+
+        color: #ffffff;
+
+        text-align: center;
+
+        text-decoration: none;
+    }
+}
+
+
+/* ---------- SERVICE CARD ---------- */
+
+.service-item {
+    position: relative;
+
+    cursor: pointer;
+
+    pointer-events: auto;
+
+    z-index: 2;
+}
+
+.service-menu {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* ---------- SERVICE MODAL ---------- */
+
+.service-modal {
+    position: fixed !important;
+
+    inset: 0 !important;
+
+    z-index: 999999 !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    visibility: hidden;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    background: rgba(0, 0, 0, 0.72);
+
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease;
+}
+
+.service-modal.active {
+    visibility: visible !important;
+
+    opacity: 1 !important;
+
+    pointer-events: auto !important;
+}
+
+.service-modal-content {
+    position: relative;
+
+    z-index: 1000000;
+
+    width: min(520px, calc(100% - 28px));
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    box-sizing: border-box;
+
+    padding: 30px 22px;
+
+    background: #ffffff;
+
+    border-radius: 18px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.45);
+}
+
+
+/* ---------- MOBILE SERVICE ---------- */
+
+@media (max-width: 480px) {
+
+    .service-menu {
+        overflow-x: auto;
+
+        justify-content: flex-start;
+
+        padding-bottom: 5px;
+
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .service-item {
+        flex: 0 0 62px;
+    }
+
+    .service-modal-content {
+        width: calc(100% - 24px);
+
+        max-height: 88vh;
+
+        padding: 28px 17px 22px;
+    }
+
+    .service-modal-title {
+        font-size: 21px;
+    }
+
+    .service-modal-description {
+        font-size: 14px;
+
+        line-height: 1.65;
+    }
+
+    .service-modal-wa {
+        width: 100%;
+
+        box-sizing: border-box;
+    }
+}  
