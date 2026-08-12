@@ -3077,16 +3077,22 @@ footer a {
     text-align: center;
 }
 
-.info-title span {
-    color: #9da6b2;
+/* ========================================
+   JUDUL INFORMASI
+======================================== */
 
-    font-size: 12px;
-    font-weight: 600;
+.info-title span {
+    display: inline-block;
+
+    color: #ffffff;
+
+    font-size: 16px;
+    font-weight: 700;
 
     letter-spacing: 1.5px;
 
     text-transform: uppercase;
-}
+   }
 
 
 /* ========================================
@@ -3265,9 +3271,12 @@ footer a {
     }
 
     .info-title span {
-        font-size: 10px;
+        color: #ffffff;
 
-        letter-spacing: 1.2px;
+        font-size: 14px;
+        font-weight: 700;
+
+        letter-spacing: 1.3px;
     }
 
     .info-container {
