@@ -2874,3 +2874,252 @@ footer a {
     }
 
 }
+
+
+/* ========================================
+   ALUR KERJA
+======================================== */
+
+.workflow-section {
+    padding: 80px 6%;
+    background: #ffffff;
+    text-align: center;
+}
+
+/* HEADER */
+
+.workflow-header {
+    max-width: 700px;
+    margin: 0 auto 45px;
+}
+
+.section-label {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: #b8860b;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.workflow-header h2 {
+    margin-bottom: 12px;
+    color: #222;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.workflow-header p {
+    color: #777;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* CONTAINER */
+
+.workflow-container {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+/* CARD */
+
+.workflow-card {
+    position: relative;
+
+    padding: 28px 20px 25px;
+
+    background: #ffffff;
+    border: 1px solid #eee;
+
+    border-radius: 14px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+
+    overflow: hidden;
+}
+
+/* GOLD TOP LINE */
+
+.workflow-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background: #c9a227;
+
+    transform: scaleX(0);
+    transform-origin: center;
+
+    transition: transform 0.3s ease;
+}
+
+/* HOVER */
+
+.workflow-card:hover {
+    transform: translateY(-7px);
+
+    border-color: #d4b04c;
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.10);
+}
+
+.workflow-card:hover::before {
+    transform: scaleX(1);
+}
+
+/* NUMBER */
+
+.workflow-number {
+    position: absolute;
+
+    top: 12px;
+    right: 15px;
+
+    color: #d8c27a;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* ICON */
+
+.workflow-icon {
+    width: 52px;
+    height: 52px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #faf7ed;
+
+    border: 1px solid #ead9a0;
+
+    border-radius: 50%;
+
+    font-size: 22px;
+
+    transition: 0.3s ease;
+}
+
+.workflow-card:hover .workflow-icon {
+    transform: scale(1.08);
+
+    background: #f5ecd0;
+}
+
+/* TITLE */
+
+.workflow-card h3 {
+    margin-bottom: 10px;
+
+    color: #222;
+
+    font-size: 17px;
+    font-weight: 700;
+}
+
+/* DESCRIPTION */
+
+.workflow-card p {
+    margin: 0;
+
+    color: #777;
+
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 900px) {
+
+    .workflow-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+    .workflow-section {
+        padding: 55px 18px;
+    }
+
+    .workflow-header {
+        margin-bottom: 30px;
+    }
+
+    .workflow-header h2 {
+        font-size: 25px;
+    }
+
+    .workflow-header p {
+        font-size: 13px;
+    }
+
+    .workflow-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .workflow-card {
+        padding: 23px 12px 20px;
+
+        border-radius: 12px;
+    }
+
+    .workflow-number {
+        top: 9px;
+        right: 10px;
+
+        font-size: 10px;
+    }
+
+    .workflow-icon {
+        width: 42px;
+        height: 42px;
+
+        margin-bottom: 12px;
+
+        font-size: 18px;
+    }
+
+    .workflow-card h3 {
+        font-size: 14px;
+        margin-bottom: 7px;
+    }
+
+    .workflow-card p {
+        font-size: 11px;
+        line-height: 1.5;
+    }
+
+}
