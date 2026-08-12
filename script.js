@@ -817,3 +817,38 @@ document.head.appendChild(
 /* ========================================
    SCRIPT.JS SELESAI
 ======================================== */
+
+/* ========================================
+   SOCIAL SHARE
+======================================== */
+
+function shareToWhatsApp() {
+
+    const text =
+        "Faeza Project - Konsultasi & Pendampingan Project\n\n" +
+        window.location.href;
+
+    const url =
+        "https://wa.me/?text=" +
+        encodeURIComponent(text);
+
+    window.open(
+        url,
+        "_blank",
+        "noopener,noreferrer"
+    );
+}
+
+
+function shareToFacebook() {
+
+    const url =
+        "https://www.facebook.com/sharer/sharer.php?u=" +
+        encodeURIComponent(window.location.href);
+
+    window.open(
+        url,
+        "_blank",
+        "noopener,noreferrer"
+    );
+}
