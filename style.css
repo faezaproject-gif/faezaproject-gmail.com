@@ -1799,7 +1799,60 @@ footer a {
 }
 
 
+/* ========================================
+   PORTFOLIO - GAMBAR TIDAK TERPOTONG
+======================================== */
 
+.portfolio-image {
+    height: 300px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background: #ffffff;
+}
+
+.portfolio-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: contain;
+
+    object-position: center;
+
+    transition:
+        transform 0.5s ease;
+}
+
+
+/* Efek hover tetap elegan */
+
+.portfolio-card:hover
+.portfolio-image img {
+    transform: scale(1.03);
+}
+
+
+/* ========================================
+   HP
+======================================== */
+
+@media (max-width: 480px) {
+
+    .portfolio-image {
+        height: 250px;
+    }
+
+    .portfolio-image img {
+        object-fit: contain;
+    }
+
+}
 
 
 
