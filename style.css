@@ -5324,3 +5324,150 @@ section {
         height: 34px;
     }
 }
+
+
+/* =====================================================
+   FAEZA PROJECT
+   BLOG FINAL OVERRIDE
+   Aman ditempel di PALING BAWAH style.css
+===================================================== */
+
+/* =========================
+   BLOG CARD
+========================= */
+
+.blog-card {
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+
+/* =========================
+   BLOG IMAGE
+========================= */
+
+.blog-card .blog-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #f5f5f5;
+}
+
+.blog-card .blog-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/* =========================
+   BLOG CONTENT
+========================= */
+
+.blog-card .blog-content {
+    padding: 18px;
+}
+
+.blog-card .blog-content h2 {
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+.blog-card .blog-content p {
+    line-height: 1.6;
+    margin-bottom: 14px;
+}
+
+
+/* =========================
+   BLOG READ MORE
+========================= */
+
+.blog-card .blog-read-more {
+    display: inline-block;
+    text-decoration: none;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 992px) {
+
+    .blog-card .blog-image {
+        aspect-ratio: 16 / 9;
+    }
+
+}
+
+
+/* =====================================================
+   HP
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .blog-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .blog-card {
+        width: 100%;
+        border-radius: 14px;
+    }
+
+    .blog-card .blog-image {
+        aspect-ratio: 16 / 9;
+    }
+
+    .blog-card .blog-content {
+        padding: 15px;
+    }
+
+    .blog-card .blog-content h2 {
+        font-size: 18px;
+        line-height: 1.4;
+        margin-bottom: 9px;
+    }
+
+    .blog-card .blog-content p {
+        font-size: 13px;
+        line-height: 1.6;
+        margin-bottom: 12px;
+    }
+
+    .blog-card .blog-meta {
+        font-size: 12px;
+        margin-bottom: 12px;
+    }
+
+    .blog-card .blog-read-more {
+        font-size: 13px;
+    }
+
+}
+
+
+/* =====================================================
+   HP KECIL
+===================================================== */
+
+@media (max-width: 380px) {
+
+    .blog-card .blog-content {
+        padding: 13px;
+    }
+
+    .blog-card .blog-content h2 {
+        font-size: 17px;
+    }
+
+    .blog-card .blog-content p {
+        font-size: 12.5px;
+    }
+
+}
