@@ -5531,3 +5531,19 @@ section {
     }
 
 }
+
+
+/* ========================================
+   ARTIKEL HOTEL UMROH
+   GAMBAR TAMPIL UTUH
+======================================== */
+
+.blog-card-hotel .blog-image {
+    aspect-ratio: 16 / 9;
+}
+
+.blog-card-hotel .blog-image img {
+    object-fit: contain;
+    object-position: center;
+    background: #f5f5f5;
+}
