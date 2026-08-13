@@ -5148,3 +5148,87 @@ footer a {
         height: 28px;
     }
 }
+
+/* =========================================
+   FLOATING WHATSAPP
+   GREEN ICON - NO CIRCLE
+========================================= */
+
+.floating-whatsapp {
+    position: fixed;
+
+    right: 16px;
+    bottom: 78px;
+
+    width: 44px;
+    height: 44px;
+
+    padding: 0 !important;
+
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+
+    border-radius: 0;
+
+    color: #25D366;
+
+    z-index: 9999;
+
+    text-decoration: none;
+}
+
+.floating-whatsapp .wa-icon {
+    width: 36px;
+    height: 36px;
+
+    display: block;
+
+    margin: 0 !important;
+
+    fill: #25D366;
+
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,.35));
+}
+
+.floating-whatsapp .wa-text {
+    display: none !important;
+}
+
+
+/* HP kecil */
+
+@media (max-width: 380px) {
+
+    .floating-whatsapp {
+        right: 12px;
+        bottom: 72px;
+    }
+
+    .floating-whatsapp .wa-icon {
+        width: 34px;
+        height: 34px;
+    }
+}
+
+
+/* =========================================
+   NAVIGATION SCROLL POSITION
+   SECTION TIDAK NANGGUNG DI BAWAH NAVBAR
+========================================= */
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 75px;
+}
+
+
+/* Jarak aman setiap section */
+
+section {
+    scroll-margin-top: 75px;
+}
