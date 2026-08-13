@@ -5232,3 +5232,95 @@ html {
 section {
     scroll-margin-top: 75px;
 }
+
+
+/* =========================================
+   FAEZA PROJECT
+   FINAL NAVIGATION + WHATSAPP POSITION
+========================================= */
+
+/* Posisi berhenti menu */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 70px;
+}
+
+section {
+    scroll-margin-top: 70px;
+}
+
+/* Floating WhatsApp - pojok kanan bawah */
+.floating-whatsapp {
+    position: fixed;
+    right: 16px;
+    bottom: 18px;
+
+    width: 44px;
+    height: 44px;
+
+    padding: 0 !important;
+
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0;
+
+    color: #25D366;
+
+    z-index: 9999;
+}
+
+.floating-whatsapp .wa-icon {
+    width: 36px;
+    height: 36px;
+
+    display: block;
+
+    margin: 0 !important;
+
+    fill: #25D366;
+
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,.35));
+}
+
+.floating-whatsapp .wa-text {
+    display: none !important;
+}
+
+/* HP */
+@media (max-width: 768px) {
+
+    html {
+        scroll-padding-top: 70px;
+    }
+
+    section {
+        scroll-margin-top: 70px;
+    }
+
+    .floating-whatsapp {
+        right: 14px;
+        bottom: 16px;
+    }
+}
+
+/* HP sangat kecil */
+@media (max-width: 380px) {
+
+    .floating-whatsapp {
+        right: 12px;
+        bottom: 14px;
+
+        width: 42px;
+        height: 42px;
+    }
+
+    .floating-whatsapp .wa-icon {
+        width: 34px;
+        height: 34px;
+    }
+}
