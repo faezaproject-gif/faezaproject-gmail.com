@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,97 +8,175 @@
     <title>Blog | Faeza Project</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <!-- =========================
+         BLOG IMAGE STYLE
+    ========================== -->
+    <style>
+        .blog-image {
+            width: 100%;
+            overflow: hidden;
+            border-radius: inherit;
+            background: #f5f5f5;
+        }
+
+        .blog-image img {
+            width: 100%;
+            height: 220px;
+            display: block;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .blog-card {
+            overflow: hidden;
+        }
+
+        @media (max-width: 768px) {
+            .blog-image img {
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .blog-image img {
+                height: 180px;
+            }
+        }
+    </style>
+
 </head>
 
 <body>
 
 <section class="blog-page">
 
-    <div class="blog-container">
+<div class="blog-container">
 
-        <!-- HEADER -->
-        <div class="blog-header">
+<!-- =========================
+     HEADER
+========================== -->
 
-            <span class="blog-label">
-                FAEZA PROJECT
-            </span>
+<div class="blog-header">
 
-            <h1>Blog</h1>
+    <span class="blog-label">
+        FAEZA PROJECT
+    </span>
 
-            <p>
-                Insight, inspirasi, dan informasi seputar project,
-                kreativitas, teknologi, serta layanan Faeza Project.
-            </p>
+    <h1>Blog</h1>
 
-        </div>
+    <p>
+        Insight, inspirasi, dan informasi seputar project,
+        kreativitas, teknologi, serta layanan Faeza Project.
+    </p>
 
-
-        <!-- KATEGORI -->
-        <div class="blog-categories">
-
-            <a href="#" class="active">Semua</a>
-            <a href="#">Website</a>
-            <a href="#">Multimedia</a>
-            <a href="#">Event Organizer</a>
-            <a href="#">Muslim Wear</a>
-            <a href="#">Umroh</a>
-
-        </div>
+</div>
 
 
-        <!-- ARTIKEL -->
-        <div class="blog-grid">
+<!-- =========================
+     KATEGORI
+========================== -->
 
-            <!-- ARTIKEL 1 -->
-            <article class="blog-card">
+<div class="blog-categories">
 
-                <div class="blog-image">
-                    <div class="blog-image-placeholder">
-                        UMROH
-                    </div>
-                </div>
+    <a href="#" class="active">
+        Semua
+    </a>
 
-                <div class="blog-content">
+    <a href="#">
+        Website
+    </a>
 
-                    <span class="blog-category">
-                        UMROH
-                    </span>
+    <a href="#">
+        Multimedia
+    </a>
 
-                    <h2>
-                        Umroh Itu Berapa Hari?
-                        Memahami Durasi Perjalanan
-                        dan Waktu Ibadah
-                    </h2>
+    <a href="#">
+        Event Organizer
+    </a>
 
-                    <p>
-                        Memahami perbedaan antara waktu ibadah umroh
-                        dengan keseluruhan lama perjalanan agar persiapan
-                        perjalanan dapat dilakukan dengan lebih baik.
-                    </p>
+    <a href="#">
+        Muslim Wear
+    </a>
 
-                    <div class="blog-meta">
-                        <span>12 Agustus 2026</span>
-                    </div>
+    <a href="#">
+        Umroh
+    </a>
 
-                    <a
-                        href="artikel-umroh.html"
-                        class="blog-read-more"
-                    >
-                        Baca Selengkapnya →
-                    </a>
-
-                </div>
-
-            </article>
+</div>
 
 
-            <!-- ARTIKEL 2 -->
-            <article class="blog-card">
+<!-- =========================
+     ARTIKEL
+========================== -->
+
+<div class="blog-grid">
+
+
+<!-- =========================
+     ARTIKEL 1
+========================== -->
+
+<article class="blog-card">
 
     <div class="blog-image">
-        <div class="blog-image-placeholder">
+
+        <img
+            src="assets/blog/publish/file_0000000015fc8207928e78be9b82645c.png"
+            alt="Umroh Itu Berapa Hari? Memahami Durasi Perjalanan dan Waktu Ibadah"
+            loading="lazy"
+        >
+
+    </div>
+
+    <div class="blog-content">
+
+        <span class="blog-category">
             UMROH
+        </span>
+
+        <h2>
+            Umroh Itu Berapa Hari?
+            Memahami Durasi Perjalanan
+            dan Waktu Ibadah
+        </h2>
+
+        <p>
+            Memahami perbedaan antara waktu ibadah umroh
+            dengan keseluruhan lama perjalanan agar persiapan
+            perjalanan dapat dilakukan dengan lebih baik.
+        </p>
+
+        <div class="blog-meta">
+            <span>12 Agustus 2026</span>
         </div>
+
+        <a
+            href="artikel-umroh.html"
+            class="blog-read-more"
+        >
+            Baca Selengkapnya →
+        </a>
+
+    </div>
+
+</article>
+
+
+<!-- =========================
+     ARTIKEL 2
+========================== -->
+
+<article class="blog-card">
+
+    <div class="blog-image">
+
+        <img
+            src="assets/blog/publish/file_0000000047ac8207b402f3a3c7c5057e.png"
+            alt="Hotel Umroh Dekat Masjid atau Paket Hemat"
+            loading="lazy"
+        >
+
     </div>
 
     <div class="blog-content">
@@ -130,17 +209,23 @@
 
     </div>
 
-            </article>
+</article>
 
 
+<!-- =========================
+     ARTIKEL 3
+========================== -->
 
-            <!-- ARTIKEL 3 -->
-            <article class="blog-card">
+<article class="blog-card">
 
     <div class="blog-image">
-        <div class="blog-image-placeholder">
-            RAMADHAN
-        </div>
+
+        <img
+            src="assets/blog/publish/file_000000005d448207824e71dbc3b23d92.png"
+            alt="Umroh di Bulan Ramadhan"
+            loading="lazy"
+        >
+
     </div>
 
     <div class="blog-content">
@@ -173,18 +258,23 @@
 
     </div>
 
-            </article>
-
-    
+</article>
 
 
-            <!-- ARTIKEL 4 -->
-            <article class="blog-card">
+<!-- =========================
+     ARTIKEL 4
+========================== -->
+
+<article class="blog-card">
 
     <div class="blog-image">
-        <div class="blog-image-placeholder">
-            AKHIR RAMADHAN
-        </div>
+
+        <img
+            src="assets/blog/publish/file_000000007b808211a472d5dfa9712458.png"
+            alt="Umroh Akhir Ramadhan"
+            loading="lazy"
+        >
+
     </div>
 
     <div class="blog-content">
@@ -217,15 +307,23 @@
 
     </div>
 
-            </article>
+</article>
 
-            <!-- ARTIKEL 5 -->
-            <article class="blog-card">
+
+<!-- =========================
+     ARTIKEL 5
+========================== -->
+
+<article class="blog-card">
 
     <div class="blog-image">
-        <div class="blog-image-placeholder">
-            VAKSIN UMROH
-        </div>
+
+        <img
+            src="assets/blog/publish/file_000000009bb08211ae7f0019bedb9634.png"
+            alt="Vaksin Meningitis untuk Umroh"
+            loading="lazy"
+        >
+
     </div>
 
     <div class="blog-content">
@@ -258,15 +356,23 @@
 
     </div>
 
-            </article>
-            
-            <!-- ARTIKEL 6 -->
-            <article class="blog-card">
+</article>
+
+
+<!-- =========================
+     ARTIKEL 6
+========================== -->
+
+<article class="blog-card">
 
     <div class="blog-image">
-        <div class="blog-image-placeholder">
-            VAKSIN UMROH
-        </div>
+
+        <img
+            src="assets/blog/publish/file_00000000aea8820782677ce4d956a1f7.png"
+            alt="Vaksin Umroh 2026"
+            loading="lazy"
+        >
+
     </div>
 
     <div class="blog-content">
@@ -299,16 +405,23 @@
 
     </div>
 
-            </article>
-            
-            <!-- ARTIKEL 7 -->
+</article>
 
-            <article class="blog-card">
+
+<!-- =========================
+     ARTIKEL 7
+========================== -->
+
+<article class="blog-card">
 
     <div class="blog-image">
-        <div class="blog-image-placeholder">
-            TRAVEL UMROH
-        </div>
+
+        <img
+            src="assets/blog/publish/file_00000000d548820b963e90866499b53a.png"
+            alt="Cara Cek Travel Umroh Resmi"
+            loading="lazy"
+        >
+
     </div>
 
     <div class="blog-content">
@@ -341,16 +454,23 @@
 
     </div>
 
-            </article>
+</article>
 
-            <!-- ARTIKEL 8 -->
 
-            <article class="blog-card">
+<!-- =========================
+     ARTIKEL 8
+========================== -->
+
+<article class="blog-card">
 
     <div class="blog-image">
-        <div class="blog-image-placeholder">
-            PAKET UMROH
-        </div>
+
+        <img
+            src="assets/blog/publish/file_00000000e1508207b3f135218b38ab76.png"
+            alt="Paket Umroh Panduan Lengkap untuk Calon Jamaah Indonesia"
+            loading="lazy"
+        >
+
     </div>
 
     <div class="blog-content">
@@ -383,19 +503,30 @@
 
     </div>
 
-            </article>
-
-        </div>
+</article>
 
 
-        <!-- KEMBALI -->
-        <a href="index.html" class="back-button">
-            ← Kembali ke Faeza Project
-        </a>
+</div>
 
-    </div>
+
+<!-- =========================
+     KEMBALI
+========================== -->
+
+<a
+    href="index.html"
+    class="back-button"
+>
+    ← Kembali ke Faeza Project
+</a>
+
+
+</div>
 
 </section>
 
 </body>
-              </html>
+</html>
+        
+
+        
