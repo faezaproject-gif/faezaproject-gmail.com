@@ -4798,3 +4798,284 @@ footer a {
         text-align: center;
     }
 }
+
+/* =========================================
+   FAEZA PROJECT
+   PORTFOLIO MOBILE FINAL
+   GAMBAR UTUH + FRAME SERAGAM
+========================================= */
+
+@media (max-width: 600px) {
+
+    /* =========================
+       PORTFOLIO SECTION
+    ========================= */
+
+    .portfolio-section {
+        padding: 58px 14px 60px;
+    }
+
+    .portfolio-header {
+        max-width: 500px;
+        margin: 0 auto 30px;
+        text-align: center;
+    }
+
+    .portfolio-header h2 {
+        font-size: 29px;
+        line-height: 1.25;
+        letter-spacing: 1.5px;
+    }
+
+    .portfolio-header p {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+
+    /* =========================
+       GRID
+    ========================= */
+
+    .portfolio-grid {
+        width: 100%;
+        max-width: 520px;
+
+        margin: 0 auto;
+
+        display: grid;
+        grid-template-columns: 1fr;
+
+        gap: 22px;
+
+        padding: 0;
+    }
+
+
+    /* =========================
+       CARD
+    ========================= */
+
+    .portfolio-card {
+        width: 100%;
+
+        display: flex !important;
+        flex-direction: column !important;
+
+        overflow: hidden;
+
+        border-radius: 18px;
+
+        box-sizing: border-box;
+    }
+
+
+    /* =========================
+       FRAME GAMBAR SERAGAM
+    ========================= */
+
+    .portfolio-image {
+        position: relative;
+
+        width: 100%;
+
+        height: 220px !important;
+        min-height: 220px !important;
+        max-height: 220px !important;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        overflow: hidden;
+
+        background: #10151d;
+
+        box-sizing: border-box;
+    }
+
+
+    /* =========================
+       GAMBAR
+       TIDAK CROP
+    ========================= */
+
+    .portfolio-image img {
+        width: 100% !important;
+        height: 100% !important;
+
+        display: block;
+
+        object-fit: contain !important;
+        object-position: center center;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        transform: none !important;
+    }
+
+
+    /* =========================
+       OVERLAY
+    ========================= */
+
+    .portfolio-overlay {
+        position: absolute;
+
+        inset: 0;
+
+        display: flex;
+
+        align-items: flex-end;
+
+        padding: 18px;
+
+        box-sizing: border-box;
+    }
+
+    .portfolio-overlay span {
+        font-size: 10px;
+
+        letter-spacing: 1.6px;
+    }
+
+
+    /* =========================
+       NOMOR
+    ========================= */
+
+    .portfolio-number {
+        top: 14px;
+        left: 14px;
+
+        width: 40px;
+        height: 40px;
+
+        font-size: 12px;
+    }
+
+
+    /* =========================
+       CONTENT
+    ========================= */
+
+    .portfolio-content {
+        width: 100%;
+
+        padding: 20px 18px 23px !important;
+
+        box-sizing: border-box;
+    }
+
+
+    /* KATEGORI */
+
+    .portfolio-category {
+        margin-bottom: 8px;
+
+        font-size: 9px;
+
+        letter-spacing: 1.5px;
+
+        line-height: 1.4;
+    }
+
+
+    /* JUDUL */
+
+    .portfolio-content h3 {
+        margin: 0 0 9px !important;
+
+        font-size: 21px !important;
+
+        line-height: 1.35;
+
+        color: #d6b56d;
+    }
+
+
+    /* DESKRIPSI */
+
+    .portfolio-content p {
+        margin: 0 !important;
+
+        font-size: 13.5px !important;
+
+        line-height: 1.7;
+
+        color: #c6cbd2;
+    }
+
+
+    /* =========================
+       JARAK ANTAR PORTFOLIO
+    ========================= */
+
+    .portfolio-card + .portfolio-card {
+        margin-top: 0;
+    }
+
+
+    /* =========================
+       TAGLINE
+    ========================= */
+
+    .portfolio-bottom {
+        width: 100%;
+
+        margin-top: 38px;
+
+        padding: 0 5px;
+
+        gap: 9px;
+
+        box-sizing: border-box;
+    }
+
+    .portfolio-bottom p {
+        font-size: 8px;
+
+        line-height: 1.6;
+
+        letter-spacing: 1.1px;
+
+        text-align: center;
+    }
+
+    .portfolio-line {
+        width: 28px;
+    }
+}
+
+
+/* =========================================
+   HP SANGAT KECIL
+========================================= */
+
+@media (max-width: 360px) {
+
+    .portfolio-section {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .portfolio-image {
+        height: 205px !important;
+        min-height: 205px !important;
+        max-height: 205px !important;
+    }
+
+    .portfolio-content {
+        padding: 18px 16px 21px !important;
+    }
+
+    .portfolio-content h3 {
+        font-size: 19px !important;
+    }
+
+    .portfolio-content p {
+        font-size: 12.5px !important;
+    }
+}
