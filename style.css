@@ -5471,3 +5471,63 @@ section {
     }
 
 }
+
+
+/* ========================================
+   GAMBAR UTAMA ARTIKEL
+   TAMPIL UTUH & PROPORSIONAL
+======================================== */
+
+.article-image {
+    width: 100%;
+    margin: 20px auto 28px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.article-image img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 380px;
+    display: block;
+    object-fit: contain;
+}
+
+
+/* =========================
+   HP
+========================= */
+
+@media (max-width: 768px) {
+
+    .article-image {
+        margin: 16px auto 24px;
+    }
+
+    .article-image img {
+        max-height: 300px;
+        width: auto;
+        max-width: 100%;
+        object-fit: contain;
+    }
+
+}
+
+
+/* =========================
+   HP KECIL
+========================= */
+
+@media (max-width: 480px) {
+
+    .article-image {
+        margin: 14px auto 22px;
+    }
+
+    .article-image img {
+        max-height: 280px;
+    }
+
+}
