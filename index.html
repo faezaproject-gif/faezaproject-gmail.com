@@ -778,5 +778,21 @@
     
 <script src="script.js"></script>
 
+ <!-- FAEZA PROJECT SERVICE WORKER -->
+<script>
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function () {
+        navigator.serviceWorker
+            .register("./service-worker.js")
+            .then(function (registration) {
+                console.log("Faeza Project PWA aktif:", registration.scope);
+            })
+            .catch(function (error) {
+                console.log("Faeza Project PWA gagal:", error);
+            });
+    });
+}
+</script>   
+    
 </body>
 </html>
