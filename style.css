@@ -5598,3 +5598,55 @@ section {
         object-fit: contain;
     }
 }
+
+
+/* ==========================================
+   FAEZA PROJECT - BLOG IMAGE FINAL
+   GAMBAR UTUH / TIDAK TERPOTONG
+========================================== */
+
+.blog-card .blog-image {
+    width: 100%;
+    height: auto !important;
+    aspect-ratio: auto !important;
+    overflow: hidden;
+    background: #f5f5f5;
+    display: block;
+}
+
+.blog-card .blog-image img {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100%;
+    display: block;
+    object-fit: initial !important;
+    object-position: initial !important;
+}
+
+/* HP */
+@media (max-width: 768px) {
+    .blog-card .blog-image {
+        height: auto !important;
+        aspect-ratio: auto !important;
+    }
+
+    .blog-card .blog-image img {
+        width: 100% !important;
+        height: auto !important;
+        object-fit: initial !important;
+    }
+}
+
+/* HP kecil */
+@media (max-width: 480px) {
+    .blog-card .blog-image {
+        height: auto !important;
+        aspect-ratio: auto !important;
+    }
+
+    .blog-card .blog-image img {
+        width: 100% !important;
+        height: auto !important;
+        object-fit: initial !important;
+    }
+   }
