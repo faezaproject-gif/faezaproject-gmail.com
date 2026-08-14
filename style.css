@@ -5650,3 +5650,62 @@ section {
         object-fit: initial !important;
     }
    }
+
+
+/* ========================================
+   FAEZA PROJECT
+   PORTFOLIO IMAGE - PPT 16:9
+   RESPONSIVE DESKTOP + iPHONE
+======================================== */
+
+.portfolio-card {
+    width: 100%;
+    overflow: hidden;
+}
+
+.portfolio-card img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto !important;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+    background: #0f1218;
+}
+
+/* ========================================
+   iPHONE / MOBILE
+======================================== */
+
+@media screen and (max-width: 768px) {
+
+    .portfolio-card {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .portfolio-card img {
+        width: 100%;
+        max-width: 100%;
+        height: auto !important;
+        aspect-ratio: 16 / 9;
+        object-fit: contain;
+    }
+
+}
+
+/* ========================================
+   iPHONE KECIL
+======================================== */
+
+@media screen and (max-width: 480px) {
+
+    .portfolio-card img {
+        width: 100%;
+        max-width: 100%;
+        height: auto !important;
+        aspect-ratio: 16 / 9;
+        object-fit: contain;
+    }
+
+}
