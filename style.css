@@ -7034,9 +7034,8 @@ section {
 }
 
 /* Highlight layanan dari pencarian */
-
 .service-group.search-highlight {
-  animation: faezaSearchHighlight 1.8s ease;
+  animation: faezaSearchHighlight 1.5s ease;
 }
 
 @keyframes faezaSearchHighlight {
@@ -7047,10 +7046,6 @@ section {
 
   35% {
     transform: scale(1.02);
-  }
-
-  70% {
-    transform: scale(1);
   }
 
   100% {
