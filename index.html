@@ -789,6 +789,233 @@
     
 <script src="script.js"></script>
 
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const searchInput = document.getElementById("faezaServiceSearch");
+  const searchMenu = document.getElementById("faezaSearchMenu");
+
+  if (!searchInput || !searchMenu) return;
+
+  const buttons = searchMenu.querySelectorAll("button");
+
+  /* ==============================
+     BUKA MENU SEARCH
+     ============================== */
+
+  searchInput.addEventListener("focus", function () {
+    searchMenu.classList.add("active");
+  });
+
+  searchInput.addEventListener("click", function () {
+    searchMenu.classList.add("active");
+  });
+
+
+  /* ==============================
+     FITUR PENCARIAN
+     ============================== */
+
+  searchInput.addEventListener("input", function () {
+
+    const keyword = this.value
+      .toLowerCase()
+      .trim();
+
+    searchMenu.classList.add("active");
+
+    buttons.forEach(function (button) {
+
+      const text = button.textContent.toLowerCase();
+
+      button.style.display =
+        text.includes(keyword) ? "flex" : "none";
+
+    });
+
+  });
+
+
+  /* ==============================
+     KLIK MENU LAYANAN
+     ============================== */
+
+  buttons.forEach(function (button) {
+
+    button.addEventListener("click", function () {
+
+      const target =
+        this.getAttribute("data-target");
+
+      let targetGroup = null;
+
+
+      /* ==========================
+         CARI SERVICE GROUP
+         ========================== */
+
+      if (
+        target === "umroh" ||
+        target === "event" ||
+        target === "muslim-wear" ||
+        target === "multimedia"
+      ) {
+
+        const groups =
+          document.querySelectorAll(".service-group");
+
+        groups.forEach(function (group) {
+
+          const heading =
+            group.querySelector("h3");
+
+          if (!heading) return;
+
+          const title =
+            heading.textContent
+              .toLowerCase()
+              .trim();
+
+
+          if (
+            target === "umroh" &&
+            title.includes("umroh")
+          ) {
+            targetGroup = group;
+          }
+
+
+          if (
+            target === "event" &&
+            title.includes("event organizer")
+          ) {
+            targetGroup = group;
+          }
+
+
+          if (
+            target === "muslim-wear" &&
+            title.includes("muslim wear")
+          ) {
+            targetGroup = group;
+          }
+
+
+          if (
+            target === "multimedia" &&
+            title.includes("multimedia")
+          ) {
+            targetGroup = group;
+          }
+
+        });
+
+
+        /* ==========================
+           SCROLL KE LAYANAN
+           ========================== */
+
+        if (targetGroup) {
+
+          targetGroup.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+          });
+
+          /* Highlight */
+          targetGroup.classList.add(
+            "search-highlight"
+          );
+
+          setTimeout(function () {
+
+            targetGroup.classList.remove(
+              "search-highlight"
+            );
+
+          }, 1600);
+
+        }
+
+      }
+
+
+      /* ==============================
+         WEBSITE
+         ============================== */
+
+      if (target === "website") {
+
+        const portfolio =
+          document.getElementById("portfolio");
+
+        if (portfolio) {
+
+          portfolio.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+
+        }
+
+      }
+
+
+      /* ==============================
+         PWA / APLIKASI
+         ============================== */
+
+      if (target === "pwa") {
+
+        const portfolio =
+          document.getElementById("portfolio");
+
+        if (portfolio) {
+
+          portfolio.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+
+        }
+
+      }
+
+
+      /* ==============================
+         RESET SEARCH
+         ============================== */
+
+      searchInput.value = "";
+
+      searchMenu.classList.remove("active");
+
+    });
+
+  });
+
+
+  /* ==============================
+     KLIK DI LUAR SEARCH
+     ============================== */
+
+  document.addEventListener("click", function (event) {
+
+    if (
+      !event.target.closest(
+        ".faeza-service-search"
+      )
+    ) {
+
+      searchMenu.classList.remove("active");
+
+    }
+
+  });
+
+});
+      </script>
+
  <!-- FAEZA PROJECT SERVICE WORKER -->
 <script>
 if ("serviceWorker" in navigator) {
