@@ -6489,3 +6489,117 @@ section {
         object-fit: contain !important;
     }
 }
+
+
+/* =====================================================
+   FINAL FIX — PORTFOLIO PPT 16:9
+   FAEZA PROJECT
+   Android + iPhone
+   Gambar tampil utuh tanpa ruang putih
+   ===================================================== */
+
+.portfolio-card {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+}
+
+/* KOTAK GAMBAR = 16:9 */
+.portfolio-image {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+
+    aspect-ratio: 16 / 9 !important;
+
+    display: block !important;
+    overflow: hidden !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    background: #ffffff !important;
+}
+
+/* GAMBAR PPT */
+.portfolio-image img,
+.portfolio-card img {
+    display: block !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    max-width: 100% !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    object-fit: contain !important;
+    object-position: center center !important;
+
+    aspect-ratio: 16 / 9 !important;
+
+    background: #ffffff !important;
+}
+
+/* NOMOR PORTFOLIO TETAP DI ATAS GAMBAR */
+.portfolio-number {
+    position: absolute !important;
+    z-index: 20 !important;
+}
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media screen and (max-width: 768px) {
+
+    .portfolio-image {
+        width: 100% !important;
+        height: auto !important;
+
+        min-height: 0 !important;
+        max-height: none !important;
+
+        aspect-ratio: 16 / 9 !important;
+    }
+
+    .portfolio-image img,
+    .portfolio-card img {
+        width: 100% !important;
+        height: 100% !important;
+
+        aspect-ratio: 16 / 9 !important;
+        object-fit: contain !important;
+    }
+}
+
+/* =====================================================
+   HP KECIL
+   ===================================================== */
+
+@media screen and (max-width: 480px) {
+
+    .portfolio-image {
+        width: 100% !important;
+        height: auto !important;
+
+        min-height: 0 !important;
+        max-height: none !important;
+
+        aspect-ratio: 16 / 9 !important;
+    }
+
+    .portfolio-image img,
+    .portfolio-card img {
+        width: 100% !important;
+        height: 100% !important;
+
+        aspect-ratio: 16 / 9 !important;
+        object-fit: contain !important;
+    }
+}
