@@ -652,7 +652,90 @@ Aqiqah & Keluarga
 
 </section>
 
+<!-- =========================
+BLOG CATEGORY FILTER
+========================== -->
 
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const categoryButtons =
+        document.querySelectorAll(".blog-categories a");
+
+    const blogCards =
+        document.querySelectorAll(".blog-grid .blog-card");
+
+
+    categoryButtons.forEach(function (button) {
+
+        button.addEventListener("click", function (event) {
+
+            event.preventDefault();
+
+
+            /* Hapus active dari semua tombol */
+
+            categoryButtons.forEach(function (item) {
+
+                item.classList.remove("active");
+
+            });
+
+
+            /* Aktifkan tombol yang dipilih */
+
+            this.classList.add("active");
+
+
+            const selectedCategory =
+                this.getAttribute("data-filter");
+
+
+            /* Filter artikel */
+
+            blogCards.forEach(function (card) {
+
+                const categoryElement =
+                    card.querySelector(".blog-category");
+
+
+                if (!categoryElement) {
+                    return;
+                }
+
+
+                const articleCategory =
+                    categoryElement.textContent
+                    .trim()
+                    .replace(/\s+/g, " ");
+
+
+                if (
+                    selectedCategory === "Semua" ||
+                    articleCategory.toLowerCase() ===
+                    selectedCategory.toLowerCase()
+                ) {
+
+                    card.style.display = "";
+
+                } else {
+
+                    card.style.display = "none";
+
+                }
+
+            });
+
+        });
+
+    });
+
+});
+
+</script>
+
+     
 </body>
 
     </html>
