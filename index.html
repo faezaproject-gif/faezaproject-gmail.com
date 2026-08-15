@@ -95,7 +95,7 @@
     <button type="button" data-target="muslim-wear">🕌 Muslim Wear</button>
     <button type="button" data-target="umroh">🕋 Umroh</button>
     <button type="button" data-target="pwa">📱 PWA / Aplikasi</button>
-    <button type="button" data-target="konsultasi">💬 Konsultasi Layanan Kami</button>
+    
   </div>
 </div>
 </header>
@@ -1046,6 +1046,169 @@ document.addEventListener("DOMContentLoaded", function () {
 
   });
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const searchInput = document.getElementById("faezaServiceSearch");
+  const searchMenu = document.getElementById("faezaSearchMenu");
+
+  if (!searchInput || !searchMenu) return;
+
+  const buttons = searchMenu.querySelectorAll("button");
+
+  /* ===============================
+     BUKA MENU SEARCH
+     =============================== */
+
+  searchInput.addEventListener("focus", function () {
+    searchMenu.classList.add("active");
+  });
+
+  searchInput.addEventListener("click", function () {
+    searchMenu.classList.add("active");
+  });
+
+
+  /* ===============================
+     PENCARIAN
+     =============================== */
+
+  searchInput.addEventListener("input", function () {
+
+    const keyword = this.value.toLowerCase().trim();
+
+    searchMenu.classList.add("active");
+
+    buttons.forEach(function (button) {
+
+      const text = button.textContent.toLowerCase();
+
+      button.style.display =
+        text.includes(keyword) ? "flex" : "none";
+
+    });
+
+  });
+
+
+  /* ===============================
+     KLIK LAYANAN
+     =============================== */
+
+  buttons.forEach(function (button) {
+
+    button.addEventListener("click", function () {
+
+      const target = this.getAttribute("data-target");
+
+      /* =========================
+         KONSULTASI
+         ========================= */
+
+      if (target === "konsultasi") {
+
+        const cta = document.getElementById("cta");
+
+        if (cta) {
+          cta.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+        }
+
+        searchInput.value = "";
+        searchMenu.classList.remove("active");
+
+        return;
+      }
+
+
+      /* =========================
+         CARI SERVICE GROUP
+         ========================= */
+
+      const groups =
+        document.querySelectorAll(".service-group");
+
+      let targetGroup = null;
+
+
+      groups.forEach(function (group) {
+
+        const heading = group.querySelector("h3");
+
+        if (!heading) return;
+
+        const title =
+          heading.textContent.toLowerCase().trim();
+
+
+        /* UMROH */
+        if (
+          target === "umroh" &&
+          title.includes("umroh")
+        ) {
+          targetGroup = group;
+        }
+
+
+        /* EVENT ORGANIZER */
+        if (
+          target === "event" &&
+          title.includes("event organizer")
+        ) {
+          targetGroup = group;
+        }
+
+
+        /* MUSLIM WEAR */
+        if (
+          target === "muslim-wear" &&
+          title.includes("muslim wear")
+        ) {
+          targetGroup = group;
+        }
+
+
+        /* MULTIMEDIA */
+        if (
+          target === "multimedia" &&
+          title.includes("multimedia")
+        ) {
+          targetGroup = group;
+        }
+
+      });
+
+
+      /* =========================
+         JIKA DITEMUKAN
+         ========================= */
+
+      if (targetGroup) {
+
+        targetGroup.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+
+        /* Efek highlight */
+        targetGroup.classList.add("search-highlight");
+
+        setTimeout(function () {
+          targetGroup.classList.remove("search-highlight");
+        }, 1800);
+
+      }
+
+
+      searchInput.value = "";
+      searchMenu.classList.remove("active");
+
+    });
+
+  });
+
 
   /* ===============================
      KLIK DI LUAR SEARCH
@@ -1061,6 +1224,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 </script>
+
     
 </body>
 </html>
