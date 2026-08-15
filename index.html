@@ -802,95 +802,174 @@
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-    const searchBox = document.getElementById("faezaServiceSearchBox");
-    const searchInput = document.getElementById("faezaServiceSearch");
-    const searchMenu = document.getElementById("faezaSearchMenu");
-    const clearButton = document.getElementById("faezaSearchClear");
+    const searchBox =
+        document.getElementById("faezaServiceSearchBox");
 
-    if (!searchBox || !searchInput || !searchMenu) {
-        console.warn("Faeza Search: elemen tidak ditemukan.");
+    const searchInput =
+        document.getElementById("faezaServiceSearch");
+
+    const searchMenu =
+        document.getElementById("faezaSearchMenu");
+
+    const clearButton =
+        document.getElementById("faezaSearchClear");
+
+
+    if (
+        !searchBox ||
+        !searchInput ||
+        !searchMenu
+    ) {
+        console.warn(
+            "Faeza Search: elemen tidak ditemukan."
+        );
         return;
     }
 
-    /* ==========================================
-       AMBIL HANYA LAYANAN DARI SERVICE-ITEM
-       ========================================== */
 
-    const serviceItems = Array.from(
-        document.querySelectorAll(
-            "#services .service-item"
-        )
-    );
+    /* =====================================
+       AMBIL HANYA SERVICE ITEM
+       ===================================== */
 
-    function getServiceData(item) {
+    const serviceItems =
+        Array.from(
+            document.querySelectorAll(
+                "#services .service-item"
+            )
+        );
 
-        const title =
-            item.getAttribute("data-title") ||
-            item.querySelector("span")?.textContent ||
-            "";
 
-        const icon =
-            item.getAttribute("data-icon") ||
-            item.querySelector(".icon")?.textContent ||
-            "✨";
-
-        const group =
-            item.closest(".service-group");
-
-        let category = "";
-
-        if (group) {
-
-            const heading =
-                group.querySelector("h3");
-
-            if (heading) {
-                category =
-                    heading.textContent.trim();
-            }
-        }
-
-        return {
-            item: item,
-            title: title.trim(),
-            icon: icon.trim(),
-            category: category
-        };
-    }
+    /* =====================================
+       DATA SEARCH
+       ===================================== */
 
     const services =
-        serviceItems.map(getServiceData);
+        serviceItems.map(function (item) {
+
+            const title =
+                item.dataset.title ||
+                item.querySelector("span")?.textContent ||
+                "";
+
+            const icon =
+                item.dataset.icon ||
+                item.querySelector(".icon")?.textContent ||
+                "✨";
+
+            const description =
+                item.dataset.description ||
+                "";
+
+            const group =
+                item.closest(".service-group");
+
+            let category = "";
+
+            if (group) {
+
+                const heading =
+                    group.querySelector("h3");
+
+                if (heading) {
+                    category =
+                        heading.textContent.trim();
+                }
+
+            }
+
+            return {
+                item: item,
+                title: title.trim(),
+                icon: icon.trim(),
+                description: description.trim(),
+                category: category
+            };
+
+        });
 
 
-    /* ==========================================
-       HASIL PENCARIAN
-       ========================================== */
+    /* =====================================
+       NORMALISASI PENCARIAN
+       ===================================== */
+
+    function normalize(text) {
+
+        return text
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .trim();
+
+    }
+
+
+    /* =====================================
+       TUTUP HASIL
+       ===================================== */
+
+    function closeResults() {
+
+        searchMenu.classList.remove(
+            "active"
+        );
+
+    }
+
+
+    /* =====================================
+       RENDER HASIL
+       ===================================== */
 
     function renderResults(keyword) {
 
         const query =
-            keyword.toLowerCase().trim();
+            normalize(keyword);
 
         searchMenu.innerHTML = "";
 
-        let results = services;
 
-        if (query !== "") {
+        /* Jangan tampilkan apa pun
+           ketika input masih kosong */
 
-            results = services.filter(function (service) {
+        if (!query) {
 
-                const searchableText = (
-                    service.title +
-                    " " +
-                    service.category
-                ).toLowerCase();
+            closeResults();
 
-                return searchableText.includes(query);
-            });
+            return;
 
         }
 
-        /* TIDAK ADA HASIL */
+
+        /* =================================
+           CARI BERDASARKAN:
+
+           - nama layanan
+           - kategori
+           - deskripsi
+        ================================= */
+
+        const results =
+            services.filter(function (service) {
+
+                const searchableText =
+                    normalize(
+                        service.title +
+                        " " +
+                        service.category +
+                        " " +
+                        service.description
+                    );
+
+                return searchableText.includes(
+                    query
+                );
+
+            });
+
+
+        /* =================================
+           TIDAK ADA HASIL
+        ================================= */
 
         if (results.length === 0) {
 
@@ -900,18 +979,29 @@ document.addEventListener("DOMContentLoaded", function () {
             empty.className =
                 "faeza-search-empty";
 
-            empty.textContent =
-                "🔍 Layanan tidak ditemukan";
+            empty.innerHTML = `
+                🔍
+                <strong>Layanan tidak ditemukan</strong>
+                <small>
+                    Coba cari: umroh, wedding, wisuda,
+                    aqiqah, abaya, koko, logo, poster
+                </small>
+            `;
 
             searchMenu.appendChild(empty);
 
-            searchMenu.classList.add("active");
+            searchMenu.classList.add(
+                "active"
+            );
 
             return;
+
         }
 
 
-        /* TAMPILKAN HASIL */
+        /* =================================
+           HASIL DITEMUKAN
+        ================================= */
 
         results.forEach(function (service) {
 
@@ -923,12 +1013,15 @@ document.addEventListener("DOMContentLoaded", function () {
             button.className =
                 "faeza-search-result";
 
+
             button.innerHTML = `
+
                 <span class="faeza-result-icon">
                     ${service.icon}
                 </span>
 
                 <span class="faeza-result-text">
+
                     <strong>
                         ${service.title}
                     </strong>
@@ -936,28 +1029,29 @@ document.addEventListener("DOMContentLoaded", function () {
                     <small>
                         ${service.category}
                     </small>
+
                 </span>
+
             `;
+
+
+            /* ===============================
+               KLIK HASIL
+            =============================== */
 
             button.addEventListener(
                 "click",
                 function () {
 
-                    /* TUTUP SEARCH */
-
-                    searchMenu.classList.remove(
-                        "active"
-                    );
+                    closeResults();
 
                     searchInput.value = "";
 
-                    if (clearButton) {
-                        clearButton.style.display =
-                            "none";
-                    }
+                    clearButton.style.display =
+                        "none";
 
 
-                    /* SCROLL KE SERVICE ITEM */
+                    /* Scroll */
 
                     service.item.scrollIntoView({
                         behavior: "smooth",
@@ -965,109 +1059,116 @@ document.addEventListener("DOMContentLoaded", function () {
                     });
 
 
-                    /* HIGHLIGHT */
+                    /* Highlight */
 
                     service.item.classList.add(
-                        "search-highlight"
+                        "search-highlight-item"
                     );
+
 
                     setTimeout(function () {
 
                         service.item.classList.remove(
-                            "search-highlight"
+                            "search-highlight-item"
                         );
 
                     }, 1800);
 
 
-                    /* BUKA POPUP LAYANAN */
+                    /* =========================
+                       BUKA POPUP LAYANAN
+                    ========================= */
 
                     setTimeout(function () {
 
                         service.item.click();
 
-                    }, 500);
+                    }, 450);
 
                 }
             );
 
-            searchMenu.appendChild(button);
+
+            searchMenu.appendChild(
+                button
+            );
 
         });
 
-        searchMenu.classList.add("active");
+
+        searchMenu.classList.add(
+            "active"
+        );
+
     }
 
 
-    /* ==========================================
-       SAAT INPUT
-       ========================================== */
+    /* =====================================
+       SAAT MENGETIK
+       ===================================== */
 
     searchInput.addEventListener(
         "input",
         function () {
 
             const value =
-                this.value.trim();
+                this.value;
 
-            if (clearButton) {
-
-                clearButton.style.display =
-                    value ? "block" : "none";
-
-            }
+            clearButton.style.display =
+                value.trim()
+                    ? "block"
+                    : "none";
 
             renderResults(value);
+
         }
     );
 
 
-    /* ==========================================
-       SAAT FOCUS
-       ========================================== */
+    /* =====================================
+       SAAT SEARCH DIKLIK
+       ===================================== */
 
     searchInput.addEventListener(
         "focus",
         function () {
 
-            renderResults(
-                this.value
-            );
+            if (this.value.trim()) {
+
+                renderResults(
+                    this.value
+                );
+
+            }
 
         }
     );
 
 
-    /* ==========================================
-       TOMBOL CLEAR
-       ========================================== */
+    /* =====================================
+       TOMBOL X
+       ===================================== */
 
-    if (clearButton) {
+    clearButton.addEventListener(
+        "click",
+        function () {
 
-        clearButton.addEventListener(
-            "click",
-            function () {
+            searchInput.value = "";
 
-                searchInput.value = "";
+            clearButton.style.display =
+                "none";
 
-                clearButton.style.display =
-                    "none";
+            closeResults();
 
-                searchMenu.classList.remove(
-                    "active"
-                );
+            searchInput.focus();
 
-                searchInput.focus();
-
-            }
-        );
-
-    }
+        }
+    );
 
 
-    /* ==========================================
+    /* =====================================
        KLIK DI LUAR SEARCH
-       ========================================== */
+       ===================================== */
 
     document.addEventListener(
         "click",
@@ -1079,22 +1180,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 )
             ) {
 
-                searchMenu.classList.remove(
-                    "active"
-                );
+                closeResults();
 
             }
 
         }
     );
 
+
 });
-</script>
-
-        
-
-            
-        
+        </script>
         
 
  <!-- FAEZA PROJECT SERVICE WORKER -->
