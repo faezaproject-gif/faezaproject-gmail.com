@@ -803,7 +803,96 @@ if ("serviceWorker" in navigator) {
             });
     });
 }
-</script>   
+</script>  
+
+   <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const searchInput = document.getElementById("faezaServiceSearch");
+  const searchMenu = document.getElementById("faezaSearchMenu");
+  const serviceButtons = searchMenu.querySelectorAll("button");
+
+  searchInput.addEventListener("focus", function () {
+    searchMenu.classList.add("active");
+  });
+
+  searchInput.addEventListener("input", function () {
+    const keyword = this.value.toLowerCase().trim();
+
+    searchMenu.classList.add("active");
+
+    serviceButtons.forEach(function (button) {
+      const text = button.textContent.toLowerCase();
+
+      button.style.display =
+        text.includes(keyword) ? "block" : "none";
+    });
+  });
+
+  serviceButtons.forEach(function (button) {
+
+    button.addEventListener("click", function () {
+
+      const target = this.getAttribute("data-target");
+
+      /* Konsultasi */
+      if (target === "konsultasi") {
+        const konsultasi =
+          document.querySelector("#contact, #konsultasi, .contact-section");
+
+        if (konsultasi) {
+          konsultasi.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+        }
+
+        searchInput.value = "";
+        searchMenu.classList.remove("active");
+        return;
+      }
+
+      /*
+       * Cari layanan berdasarkan teks.
+       * Tidak mengubah sistem service-item yang sudah ada.
+       */
+      const services =
+        document.querySelectorAll(".service-item");
+
+      let found = false;
+
+      services.forEach(function (service) {
+
+        const text = service.textContent.toLowerCase();
+
+        if (!found && text.includes(target.replace("-", " "))) {
+
+          service.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+          });
+
+          service.click();
+          found = true;
+        }
+      });
+
+      searchInput.value = "";
+      searchMenu.classList.remove("active");
+    });
+  });
+
+  /* Klik di luar search */
+  document.addEventListener("click", function (event) {
+
+    if (!event.target.closest(".faeza-service-search")) {
+      searchMenu.classList.remove("active");
+    }
+
+  });
+
+});
+   </script> 
     
 </body>
 </html>
