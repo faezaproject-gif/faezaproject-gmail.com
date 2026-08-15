@@ -6932,130 +6932,9 @@ section {
     }
 
 }
-
 /* =========================================
-   FAEZA PROJECT - SEARCH LAYANAN
-   ========================================= */
-
-.faeza-service-search {
-  width: min(92%, 420px);
-  margin: 14px auto 0;
-  position: relative;
-  z-index: 20;
-}
-
-.faeza-search-box {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  min-height: 46px;
-  padding: 0 15px;
-  background: #fff;
-  border: 1px solid rgba(0,0,0,.10);
-  border-radius: 14px;
-  box-shadow: 0 6px 18px rgba(0,0,0,.08);
-  box-sizing: border-box;
-}
-
-.faeza-search-icon {
-  font-size: 18px;
-  margin-right: 9px;
-  flex-shrink: 0;
-}
-
-.faeza-search-box input {
-  width: 100%;
-  border: 0;
-  outline: 0;
-  background: transparent;
-  color: #333;
-  font-size: 14px;
-  font-family: inherit;
-}
-
-.faeza-search-box input::placeholder {
-  color: #888;
-}
-
-.faeza-search-menu {
-  display: none;
-  position: absolute;
-  top: calc(100% + 7px);
-  left: 0;
-  right: 0;
-  background: #fff;
-  border-radius: 14px;
-  padding: 7px;
-  box-shadow: 0 12px 30px rgba(0,0,0,.15);
-  border: 1px solid rgba(0,0,0,.08);
-  max-height: 300px;
-  overflow-y: auto;
-}
-
-.faeza-search-menu.active {
-  display: block;
-}
-
-.faeza-search-menu button {
-  width: 100%;
-  display: block;
-  border: 0;
-  background: transparent;
-  text-align: left;
-  padding: 12px 13px;
-  border-radius: 10px;
-  font-family: inherit;
-  font-size: 14px;
-  color: #333;
-  cursor: pointer;
-}
-
-.faeza-search-menu button:hover,
-.faeza-search-menu button:active {
-  background: #f7f1df;
-}
-
-/* Khusus layar kecil / iPhone */
-@media (max-width: 480px) {
-  .faeza-service-search {
-    width: 90%;
-    margin-top: 12px;
-  }
-
-  .faeza-search-box {
-    min-height: 44px;
-    border-radius: 13px;
-  }
-
-  .faeza-search-menu button {
-    padding: 11px 12px;
-    font-size: 13px;
-  }
-}
-
-/* Highlight layanan dari pencarian */
-.service-group.search-highlight {
-  animation: faezaSearchHighlight 1.5s ease;
-}
-
-@keyframes faezaSearchHighlight {
-
-  0% {
-    transform: scale(1);
-  }
-
-  35% {
-    transform: scale(1.02);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-
-}
-
-/* =========================================
-   FAEZA PROJECT SEARCH ENGINE - FINAL
+   FAEZA PROJECT
+   SEARCH ENGINE LAYANAN - FINAL
 ========================================= */
 
 .faeza-service-search {
@@ -7069,29 +6948,44 @@ section {
     display: flex;
     align-items: center;
     gap: 9px;
+
+    width: 100%;
     min-height: 48px;
+
     padding: 0 13px;
+
     background: #ffffff;
+
     border: 1px solid rgba(184, 134, 11, 0.35);
+
     border-radius: 14px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.10);
+
+    box-shadow:
+        0 6px 20px rgba(0, 0, 0, 0.10);
+
     box-sizing: border-box;
 }
 
 .faeza-search-icon {
-    font-size: 18px;
     flex-shrink: 0;
+    font-size: 18px;
 }
 
 #faezaServiceSearch {
     flex: 1;
+
     width: 100%;
     min-width: 0;
+
     border: none;
     outline: none;
+
     background: transparent;
+
     color: #222;
+
     font-size: 15px;
+
     font-family: inherit;
 }
 
@@ -7099,31 +6993,63 @@ section {
     color: #888;
 }
 
+
+/* ==========================
+   TOMBOL CLEAR
+========================== */
+
 #faezaSearchClear {
     display: none;
+
+    flex-shrink: 0;
+
     border: none;
+
     background: transparent;
+
     color: #777;
+
     font-size: 16px;
+
     cursor: pointer;
+
     padding: 5px;
 }
 
 
-/* MENU HASIL SEARCH */
+/* ==========================
+   HASIL SEARCH
+========================== */
 
 .faeza-search-menu {
     display: none;
+
     position: absolute;
+
+    top: calc(100% + 8px);
+
     left: 0;
     right: 0;
-    top: calc(100% + 8px);
+
     padding: 7px;
+
     background: #ffffff;
+
     border-radius: 14px;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
-    border: 1px solid rgba(184, 134, 11, 0.18);
+
+    border: 1px solid
+        rgba(184, 134, 11, 0.18);
+
+    box-shadow:
+        0 12px 30px
+        rgba(0, 0, 0, 0.15);
+
     box-sizing: border-box;
+
+    max-height: 330px;
+
+    overflow-y: auto;
+
     z-index: 9999;
 }
 
@@ -7132,77 +7058,183 @@ section {
 }
 
 
-/* TOMBOL HASIL */
+/* ==========================
+   ITEM HASIL
+========================== */
 
-.faeza-search-menu button {
+.faeza-search-result {
     display: flex;
+
     align-items: center;
+
+    gap: 12px;
+
     width: 100%;
-    min-height: 45px;
-    padding: 11px 13px;
+
+    min-height: 50px;
+
+    padding: 10px 12px;
+
     border: none;
-    border-radius: 9px;
+
+    border-radius: 10px;
+
     background: #ffffff;
+
     color: #222;
+
     text-align: left;
-    font-size: 14px;
+
     font-family: inherit;
+
     cursor: pointer;
+
+    box-sizing: border-box;
 }
 
-.faeza-search-menu button:hover,
-.faeza-search-menu button:active {
+.faeza-search-result:hover,
+.faeza-search-result:active {
     background: #fff7df;
 }
 
 
-/* TIDAK DITEMUKAN */
+/* ICON HASIL */
+
+.faeza-result-icon {
+    flex-shrink: 0;
+
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+}
+
+
+/* TEKS HASIL */
+
+.faeza-result-text {
+    display: block;
+
+    min-width: 0;
+}
+
+.faeza-result-text strong {
+    display: block;
+
+    font-size: 14px;
+
+    line-height: 1.3;
+
+    margin-bottom: 3px;
+}
+
+.faeza-result-text small {
+    display: block;
+
+    color: #777;
+
+    font-size: 11px;
+
+    line-height: 1.3;
+}
+
+
+/* ==========================
+   TIDAK DITEMUKAN
+========================== */
 
 .faeza-search-empty {
-    padding: 15px;
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 5px;
+
+    padding: 18px 12px;
+
     text-align: center;
+
     color: #777;
+
+    font-size: 14px;
+}
+
+.faeza-search-empty strong {
+    color: #555;
+
     font-size: 13px;
 }
 
+.faeza-search-empty small {
+    font-size: 11px;
 
-/* HIGHLIGHT LAYANAN */
-
-.service-group.search-highlight {
-    animation: faezaSearchHighlight 1.8s ease;
+    line-height: 1.4;
 }
 
-@keyframes faezaSearchHighlight {
+
+/* ==========================
+   HIGHLIGHT HASIL
+========================== */
+
+.service-item.search-highlight-item {
+    animation:
+        faezaSearchItemHighlight
+        1.8s ease;
+}
+
+@keyframes faezaSearchItemHighlight {
 
     0% {
         transform: scale(1);
-        box-shadow: 0 0 0 rgba(184, 134, 11, 0);
+
+        box-shadow:
+            0 0 0
+            rgba(184, 134, 11, 0);
     }
 
     35% {
-        transform: scale(1.015);
-        box-shadow: 0 0 0 4px rgba(184, 134, 11, 0.18);
+        transform: scale(1.025);
+
+        box-shadow:
+            0 0 0 4px
+            rgba(184, 134, 11, 0.18);
     }
 
     100% {
         transform: scale(1);
-        box-shadow: 0 0 0 rgba(184, 134, 11, 0);
+
+        box-shadow:
+            0 0 0
+            rgba(184, 134, 11, 0);
     }
 
 }
 
 
-/* IPHONE / MOBILE */
+/* ==========================
+   IPHONE / ANDROID
+========================== */
 
 @media (max-width: 600px) {
 
     .faeza-service-search {
         width: calc(100% - 24px);
+
         margin-top: 15px;
     }
 
     .faeza-search-input {
         min-height: 47px;
+
         border-radius: 13px;
     }
 
@@ -7210,10 +7242,17 @@ section {
         font-size: 14px;
     }
 
-    .faeza-search-menu button {
-        min-height: 46px;
-        font-size: 14px;
+    .faeza-search-result {
+        min-height: 48px;
+
+        padding: 10px;
     }
 
-}
+    .faeza-result-text strong {
+        font-size: 13px;
+    }
+
+                        }
+
+
 
