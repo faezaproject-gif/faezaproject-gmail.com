@@ -1,4 +1,4 @@
-const CACHE_NAME = "faeza-project-v1";
+const CACHE_NAME = "faeza-project-v2";
 
 const APP_SHELL = [
   "./",
