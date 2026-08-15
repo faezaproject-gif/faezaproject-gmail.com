@@ -7053,3 +7053,167 @@ section {
   }
 
 }
+
+/* =========================================
+   FAEZA PROJECT SEARCH ENGINE - FINAL
+========================================= */
+
+.faeza-service-search {
+    width: min(92%, 520px);
+    margin: 18px auto 0;
+    position: relative;
+    z-index: 1000;
+}
+
+.faeza-search-input {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    min-height: 48px;
+    padding: 0 13px;
+    background: #ffffff;
+    border: 1px solid rgba(184, 134, 11, 0.35);
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.10);
+    box-sizing: border-box;
+}
+
+.faeza-search-icon {
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+#faezaServiceSearch {
+    flex: 1;
+    width: 100%;
+    min-width: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #222;
+    font-size: 15px;
+    font-family: inherit;
+}
+
+#faezaServiceSearch::placeholder {
+    color: #888;
+}
+
+#faezaSearchClear {
+    display: none;
+    border: none;
+    background: transparent;
+    color: #777;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+
+/* MENU HASIL SEARCH */
+
+.faeza-search-menu {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(100% + 8px);
+    padding: 7px;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    border: 1px solid rgba(184, 134, 11, 0.18);
+    box-sizing: border-box;
+    z-index: 9999;
+}
+
+.faeza-search-menu.active {
+    display: block;
+}
+
+
+/* TOMBOL HASIL */
+
+.faeza-search-menu button {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 45px;
+    padding: 11px 13px;
+    border: none;
+    border-radius: 9px;
+    background: #ffffff;
+    color: #222;
+    text-align: left;
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.faeza-search-menu button:hover,
+.faeza-search-menu button:active {
+    background: #fff7df;
+}
+
+
+/* TIDAK DITEMUKAN */
+
+.faeza-search-empty {
+    padding: 15px;
+    text-align: center;
+    color: #777;
+    font-size: 13px;
+}
+
+
+/* HIGHLIGHT LAYANAN */
+
+.service-group.search-highlight {
+    animation: faezaSearchHighlight 1.8s ease;
+}
+
+@keyframes faezaSearchHighlight {
+
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 rgba(184, 134, 11, 0);
+    }
+
+    35% {
+        transform: scale(1.015);
+        box-shadow: 0 0 0 4px rgba(184, 134, 11, 0.18);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 rgba(184, 134, 11, 0);
+    }
+
+}
+
+
+/* IPHONE / MOBILE */
+
+@media (max-width: 600px) {
+
+    .faeza-service-search {
+        width: calc(100% - 24px);
+        margin-top: 15px;
+    }
+
+    .faeza-search-input {
+        min-height: 47px;
+        border-radius: 13px;
+    }
+
+    #faezaServiceSearch {
+        font-size: 14px;
+    }
+
+    .faeza-search-menu button {
+        min-height: 46px;
+        font-size: 14px;
+    }
+
+}
+
