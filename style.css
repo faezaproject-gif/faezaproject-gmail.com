@@ -6448,3 +6448,144 @@ section {
         height: auto !important;
     }
    }
+
+
+
+/* =====================================================
+   FAEZA PROJECT
+   PORTFOLIO — FINAL PPT 16:9
+   GAMBAR UTUH • TIDAK TERPOTONG
+   ANDROID • IPHONE • DESKTOP
+===================================================== */
+
+.portfolio-card {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+}
+
+/* AREA GAMBAR */
+.portfolio-card .portfolio-image {
+    position: relative !important;
+
+    width: 100% !important;
+    height: auto !important;
+
+    min-height: 0 !important;
+    max-height: none !important;
+
+    aspect-ratio: 16 / 9 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    overflow: hidden !important;
+
+    background: #ffffff !important;
+
+    line-height: 0 !important;
+}
+
+/* GAMBAR PPT */
+.portfolio-card .portfolio-image img {
+    display: block !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    max-width: 100% !important;
+    min-width: 0 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+
+    object-fit: contain !important;
+    object-position: center !important;
+}
+
+/* KONTEN DI BAWAH GAMBAR */
+.portfolio-card .portfolio-content {
+    width: 100% !important;
+    padding: 28px 22px 30px !important;
+
+    box-sizing: border-box !important;
+}
+
+/* NOMOR PORTFOLIO */
+.portfolio-card .portfolio-number {
+    position: absolute !important;
+    top: 18px !important;
+    left: 28px !important;
+    z-index: 20 !important;
+}
+
+/* HP / ANDROID / IPHONE */
+@media screen and (max-width: 768px) {
+
+    .portfolio-grid {
+        width: 100% !important;
+        max-width: 520px !important;
+
+        margin: 30px auto !important;
+
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+
+        gap: 24px !important;
+    }
+
+    .portfolio-card {
+        width: 100% !important;
+    }
+
+    .portfolio-card .portfolio-image {
+        width: 100% !important;
+
+        height: auto !important;
+
+        min-height: 0 !important;
+        max-height: none !important;
+
+        aspect-ratio: 16 / 9 !important;
+
+        overflow: hidden !important;
+    }
+
+    .portfolio-card .portfolio-image img {
+        width: 100% !important;
+        height: 100% !important;
+
+        object-fit: contain !important;
+        object-position: center !important;
+    }
+}
+
+/* HP KECIL */
+@media screen and (max-width: 480px) {
+
+    .portfolio-grid {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    .portfolio-card .portfolio-image {
+        width: 100% !important;
+        height: auto !important;
+
+        aspect-ratio: 16 / 9 !important;
+
+        min-height: 0 !important;
+        max-height: none !important;
+    }
+
+    .portfolio-card .portfolio-image img {
+        width: 100% !important;
+        height: 100% !important;
+
+        object-fit: contain !important;
+    }
+}
