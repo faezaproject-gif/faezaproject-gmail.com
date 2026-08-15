@@ -6689,3 +6689,246 @@ section {
         font-size: 14px !important;
     }
        }
+
+
+/* =====================================================
+   FAEZA PROJECT
+   PORTFOLIO IMAGE - FINAL FIX
+   IPHONE + ANDROID + DESKTOP
+   GAMBAR WAJIB TAMPIL
+===================================================== */
+
+.portfolio-card {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+}
+
+/* AREA GAMBAR */
+.portfolio-card .portfolio-image {
+    position: relative !important;
+
+    width: 100% !important;
+
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+
+    aspect-ratio: 16 / 9 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    overflow: hidden !important;
+
+    background: #0f1218 !important;
+
+    display: block !important;
+    line-height: 0 !important;
+}
+
+/* GAMBAR PORTFOLIO */
+.portfolio-card .portfolio-image img {
+    display: block !important;
+
+    width: 100% !important;
+    height: auto !important;
+
+    min-width: 0 !important;
+    max-width: 100% !important;
+
+    min-height: 0 !important;
+    max-height: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border: 0 !important;
+
+    object-fit: contain !important;
+    object-position: center center !important;
+
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* NOMOR 01, 02, 03, dst */
+.portfolio-card .portfolio-number {
+    position: absolute !important;
+
+    top: 12px !important;
+    left: 14px !important;
+
+    width: 44px !important;
+    height: 44px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    z-index: 20 !important;
+
+    border-radius: 50% !important;
+
+    box-sizing: border-box !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    font-size: 14px !important;
+    line-height: 1 !important;
+}
+
+/* KONTEN DI BAWAH GAMBAR */
+.portfolio-card .portfolio-content {
+    width: 100% !important;
+
+    box-sizing: border-box !important;
+
+    padding: 22px 20px 26px !important;
+}
+
+
+/* =====================================================
+   IPHONE / ANDROID
+===================================================== */
+
+@media screen and (max-width: 768px) {
+
+    .portfolio-grid {
+        width: 100% !important;
+        max-width: 520px !important;
+
+        margin: 30px auto !important;
+
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+
+        gap: 24px !important;
+    }
+
+    .portfolio-card {
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    .portfolio-card .portfolio-image {
+        width: 100% !important;
+
+        height: auto !important;
+        min-height: 0 !important;
+        max-height: none !important;
+
+        aspect-ratio: 16 / 9 !important;
+
+        display: block !important;
+    }
+
+    .portfolio-card .portfolio-image img {
+        width: 100% !important;
+
+        height: auto !important;
+
+        max-width: 100% !important;
+
+        display: block !important;
+
+        object-fit: contain !important;
+
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+}
+
+
+/* =====================================================
+   IPHONE KECIL
+===================================================== */
+
+@media screen and (max-width: 480px) {
+
+    .portfolio-grid {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+    }
+
+    .portfolio-card .portfolio-image {
+        width: 100% !important;
+
+        height: auto !important;
+
+        aspect-ratio: 16 / 9 !important;
+
+        min-height: 0 !important;
+        max-height: none !important;
+    }
+
+    .portfolio-card .portfolio-image img {
+        width: 100% !important;
+        height: auto !important;
+
+        display: block !important;
+
+        object-fit: contain !important;
+    }
+
+    .portfolio-card .portfolio-number {
+        top: 10px !important;
+        left: 12px !important;
+
+        width: 42px !important;
+        height: 42px !important;
+
+        font-size: 14px !important;
+    }
+
+}
+
+
+/* =====================================================
+   SAFARI / IPHONE IMAGE FIX
+===================================================== */
+
+@supports (-webkit-touch-callout: none) {
+
+    .portfolio-card .portfolio-image {
+        display: block !important;
+
+        width: 100% !important;
+
+        height: auto !important;
+
+        aspect-ratio: 16 / 9 !important;
+
+        overflow: hidden !important;
+    }
+
+    .portfolio-card .portfolio-image img {
+        display: block !important;
+
+        width: 100% !important;
+
+        height: auto !important;
+
+        max-width: 100% !important;
+
+        object-fit: contain !important;
+
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+}
