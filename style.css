@@ -6489,14 +6489,105 @@ section {
         object-fit: contain !important;
     }
 }
+ /* =====================================================
+    FAEZA PROJECT — PORTFOLIO IMAGE FINAL
+    Gambar PPT 16:9 tampil utuh tanpa ruang putih
+    Android + iPhone
+    ===================================================== */
 
+.portfolio-card {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+}
 
-/* =====================================================
-   FINAL FIX — PORTFOLIO PPT 16:9
-   FAEZA PROJECT
-   Android + iPhone
-   Gambar tampil utuh tanpa ruang putih
-   ===================================================== */
+/* WADAH MENGIKUTI TINGGI GAMBAR */
+.portfolio-image {
+    width: 100% !important;
+
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+
+    aspect-ratio: auto !important;
+
+    display: block !important;
+    overflow: hidden !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    background: #ffffff !important;
+}
+
+/* GAMBAR PPT — JANGAN DIPAKSA TINGGINYA */
+.portfolio-image img,
+.portfolio-card img {
+    display: block !important;
+
+    width: 100% !important;
+    height: auto !important;
+
+    max-width: 100% !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    max-height: none !important;
+
+    object-fit: initial !important;
+    object-position: center !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    position: relative !important;
+    z-index: 2 !important;
+
+    background: transparent !important;
+}
+
+/* NOMOR 01, 02, 03, dst */
+.portfolio-number {
+    position: absolute !important;
+    z-index: 20 !important;
+}
+
+/* ANDROID / IPHONE */
+@media screen and (max-width: 768px) {
+
+    .portfolio-image {
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        max-height: none !important;
+        aspect-ratio: auto !important;
+    }
+
+    .portfolio-image img,
+    .portfolio-card img {
+        width: 100% !important;
+        height: auto !important;
+        max-width: 100% !important;
+        object-fit: initial !important;
+    }
+}
+
+/* HP KECIL */
+@media screen and (max-width: 480px) {
+
+    .portfolio-image {
+        height: auto !important;
+        min-height: 0 !important;
+        max-height: none !important;
+        aspect-ratio: auto !important;
+    }
+
+    .portfolio-image img,
+    .portfolio-card img {
+        width: 100% !important;
+        height: auto !important;
+    }
+}================================================== */
 
 .portfolio-card {
     width: 100% !important;
@@ -6508,11 +6599,29 @@ section {
 /* KOTAK GAMBAR = 16:9 */
 .portfolio-image {
     width: 100% !important;
+
+    /* =====================================================
+    FAEZA PROJECT — PORTFOLIO IMAGE FINAL
+    Gambar PPT 16:9 tampil utuh tanpa ruang putih
+    Android + iPhone
+    ===================================================== */
+
+.portfolio-card {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+}
+
+/* WADAH MENGIKUTI TINGGI GAMBAR */
+.portfolio-image {
+    width: 100% !important;
+
     height: auto !important;
     min-height: 0 !important;
     max-height: none !important;
 
-    aspect-ratio: 16 / 9 !important;
+    aspect-ratio: auto !important;
 
     display: block !important;
     overflow: hidden !important;
@@ -6523,83 +6632,70 @@ section {
     background: #ffffff !important;
 }
 
-/* GAMBAR PPT */
+/* GAMBAR PPT — JANGAN DIPAKSA TINGGINYA */
 .portfolio-image img,
 .portfolio-card img {
     display: block !important;
 
     width: 100% !important;
-    height: 100% !important;
+    height: auto !important;
 
     max-width: 100% !important;
     min-width: 0 !important;
     min-height: 0 !important;
+    max-height: none !important;
+
+    object-fit: initial !important;
+    object-position: center !important;
 
     margin: 0 !important;
     padding: 0 !important;
 
-    object-fit: contain !important;
-    object-position: center center !important;
+    position: relative !important;
+    z-index: 2 !important;
 
-    aspect-ratio: 16 / 9 !important;
-
-    background: #ffffff !important;
+    background: transparent !important;
 }
 
-/* NOMOR PORTFOLIO TETAP DI ATAS GAMBAR */
+/* NOMOR 01, 02, 03, dst */
 .portfolio-number {
     position: absolute !important;
     z-index: 20 !important;
 }
 
-/* =====================================================
-   MOBILE
-   ===================================================== */
-
+/* ANDROID / IPHONE */
 @media screen and (max-width: 768px) {
 
     .portfolio-image {
         width: 100% !important;
         height: auto !important;
-
         min-height: 0 !important;
         max-height: none !important;
-
-        aspect-ratio: 16 / 9 !important;
+        aspect-ratio: auto !important;
     }
 
     .portfolio-image img,
     .portfolio-card img {
         width: 100% !important;
-        height: 100% !important;
-
-        aspect-ratio: 16 / 9 !important;
-        object-fit: contain !important;
+        height: auto !important;
+        max-width: 100% !important;
+        object-fit: initial !important;
     }
 }
 
-/* =====================================================
-   HP KECIL
-   ===================================================== */
-
+/* HP KECIL */
 @media screen and (max-width: 480px) {
 
     .portfolio-image {
-        width: 100% !important;
         height: auto !important;
-
         min-height: 0 !important;
         max-height: none !important;
-
-        aspect-ratio: 16 / 9 !important;
+        aspect-ratio: auto !important;
     }
 
     .portfolio-image img,
     .portfolio-card img {
         width: 100% !important;
-        height: 100% !important;
-
-        aspect-ratio: 16 / 9 !important;
-        object-fit: contain !important;
+        height: auto !important;
     }
 }
