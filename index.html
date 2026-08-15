@@ -834,92 +834,54 @@
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-    const searchBox =
-        document.getElementById("faezaServiceSearchBox");
+    const searchBox = document.getElementById("faezaServiceSearchBox");
+    const searchInput = document.getElementById("faezaServiceSearch");
+    const searchMenu = document.getElementById("faezaSearchMenu");
+    const clearButton = document.getElementById("faezaSearchClear");
 
-    const searchInput =
-        document.getElementById("faezaServiceSearch");
-
-    const searchMenu =
-        document.getElementById("faezaSearchMenu");
-
-    const clearButton =
-        document.getElementById("faezaSearchClear");
-
-    if (
-        !searchBox ||
-        !searchInput ||
-        !searchMenu
-    ) {
-        console.warn(
-            "Faeza Search: elemen search tidak ditemukan."
-        );
+    if (!searchBox || !searchInput || !searchMenu) {
+        console.warn("Faeza Search: elemen tidak ditemukan.");
         return;
     }
 
-    const buttons =
-        searchMenu.querySelectorAll("button");
+    /* DATA LAYANAN */
+    const services = [
+        {
+            keyword: "umroh",
+            label: "🕋 Umroh",
+            target: "umroh"
+        },
+        {
+            keyword: "event",
+            label: "💍 Event Organizer",
+            target: "event"
+        },
+        {
+            keyword: "muslim",
+            label: "🕌 Muslim Wear",
+            target: "muslim-wear"
+        },
+        {
+            keyword: "multimedia",
+            label: "🎨 Multimedia",
+            target: "multimedia"
+        }
+    ];
 
+    /* RENDER MENU */
+    function renderResults(keyword = "") {
 
-    /* =========================
-       BUKA SEARCH
-    ========================== */
+        const query = keyword.toLowerCase().trim();
 
-    function openSearch() {
-        searchMenu.classList.add("active");
-    }
+        searchMenu.innerHTML = "";
 
-
-    /* =========================
-       TUTUP SEARCH
-    ========================== */
-
-    function closeSearch() {
-        searchMenu.classList.remove("active");
-    }
-
-
-    /* =========================
-       FILTER SEARCH
-    ========================== */
-
-    function filterServices() {
-
-        const keyword =
-            searchInput.value
-                .toLowerCase()
-                .trim();
-
-        openSearch();
-
-        let found = false;
-
-        buttons.forEach(function (button) {
-
-            const text =
-                button.textContent
-                    .toLowerCase();
-
-            if (
-                keyword === "" ||
-                text.includes(keyword)
-            ) {
-
-                button.style.display = "flex";
-                found = true;
-
-            } else {
-
-                button.style.display = "none";
-
-            }
-
+        const results = services.filter(function (service) {
+            return !query ||
+                   service.keyword.includes(query) ||
+                   service.label.toLowerCase().includes(query);
         });
 
-        clearButton.style.display =
-            keyword ? "block" : "none";
-
-        if (!found && keyword !== "") {
+        if (results.length === 0) {
 
             searchMenu.innerHTML = `
                 <div class="faeza-search-empty">
@@ -927,210 +889,148 @@ document.addEventListener("DOMContentLoaded", function () {
                 </div>
             `;
 
-        } else if (
-            !searchMenu.querySelector("button")
-        ) {
-
-            searchMenu.innerHTML = `
-                <button type="button" data-target="multimedia">
-                    🎨 Multimedia
-                </button>
-
-                <button type="button" data-target="event">
-                    💍 Event Organizer
-                </button>
-
-                <button type="button" data-target="muslim-wear">
-                    🕌 Muslim Wear
-                </button>
-
-                <button type="button" data-target="umroh">
-                    🕋 Umroh
-                </button>
-            `;
-
+            searchMenu.classList.add("active");
+            return;
         }
 
+        results.forEach(function (service) {
+
+            const button = document.createElement("button");
+
+            button.type = "button";
+            button.setAttribute("data-target", service.target);
+            button.textContent = service.label;
+
+            searchMenu.appendChild(button);
+        });
+
+        searchMenu.classList.add("active");
     }
 
+    /* BUKA SEARCH */
+    searchInput.addEventListener("focus", function () {
+        renderResults(searchInput.value);
+    });
 
-    /* =========================
-       INPUT SEARCH
-    ========================== */
+    searchInput.addEventListener("click", function () {
+        renderResults(searchInput.value);
+    });
 
-    searchInput.addEventListener(
-        "focus",
-        openSearch
-    );
+    /* KETIK PENCARIAN */
+    searchInput.addEventListener("input", function () {
 
-    searchInput.addEventListener(
-        "click",
-        openSearch
-    );
+        const value = searchInput.value.trim();
 
-    searchInput.addEventListener(
-        "input",
-        filterServices
-    );
+        clearButton.style.display =
+            value ? "block" : "none";
 
+        renderResults(value);
+    });
 
-    /* =========================
-       KLIK LAYANAN
-    ========================== */
+    /* KLIK HASIL SEARCH */
+    searchMenu.addEventListener("click", function (event) {
 
-    searchMenu.addEventListener(
-        "click",
-        function (event) {
+        const button = event.target.closest("button");
 
-            const button =
-                event.target.closest("button");
+        if (!button) return;
 
-            if (!button) return;
+        const target = button.getAttribute("data-target");
 
-            const target =
-                button.getAttribute("data-target");
+        const groups =
+            document.querySelectorAll(".service-group");
 
-            const groups =
-                document.querySelectorAll(
-                    ".service-group"
-                );
+        let targetGroup = null;
 
-            let targetGroup = null;
+        groups.forEach(function (group) {
 
-            groups.forEach(function (group) {
+            const heading = group.querySelector("h3");
 
-                const heading =
-                    group.querySelector("h3");
+            if (!heading) return;
 
-                if (!heading) return;
-
-                const title =
-                    heading.textContent
-                        .toLowerCase()
-                        .trim();
-
-
-                if (
-                    target === "umroh" &&
-                    title.includes("umroh")
-                ) {
-                    targetGroup = group;
-                }
-
-
-                if (
-                    target === "event" &&
-                    title.includes("event organizer")
-                ) {
-                    targetGroup = group;
-                }
-
-
-                if (
-                    target === "muslim-wear" &&
-                    title.includes("muslim wear")
-                ) {
-                    targetGroup = group;
-                }
-
-
-                if (
-                    target === "multimedia" &&
-                    title.includes("multimedia")
-                ) {
-                    targetGroup = group;
-                }
-
-            });
-
-
-            /* =========================
-               SCROLL KE LAYANAN
-            ========================== */
-
-            if (targetGroup) {
-
-                targetGroup.scrollIntoView({
-                    behavior: "smooth",
-                    block: "center"
-                });
-
-
-                targetGroup.classList.add(
-                    "search-highlight"
-                );
-
-
-                setTimeout(function () {
-
-                    targetGroup.classList.remove(
-                        "search-highlight"
-                    );
-
-                }, 1800);
-
-            }
-
-
-            /* RESET */
-
-            searchInput.value = "";
-
-            clearButton.style.display =
-                "none";
-
-            closeSearch();
-
-        }
-    );
-
-
-    /* =========================
-       TOMBOL CLEAR
-    ========================== */
-
-    clearButton.addEventListener(
-        "click",
-        function () {
-
-            searchInput.value = "";
-
-            clearButton.style.display =
-                "none";
-
-            buttons.forEach(function (button) {
-                button.style.display = "flex";
-            });
-
-            closeSearch();
-
-            searchInput.focus();
-
-        }
-    );
-
-
-    /* =========================
-       KLIK DI LUAR SEARCH
-    ========================== */
-
-    document.addEventListener(
-        "click",
-        function (event) {
+            const title =
+                heading.textContent
+                    .toLowerCase()
+                    .trim();
 
             if (
-                !searchBox.contains(
-                    event.target
-                )
+                target === "umroh" &&
+                title.includes("umroh")
             ) {
-                closeSearch();
+                targetGroup = group;
             }
 
+            if (
+                target === "event" &&
+                title.includes("event organizer")
+            ) {
+                targetGroup = group;
+            }
+
+            if (
+                target === "muslim-wear" &&
+                title.includes("muslim wear")
+            ) {
+                targetGroup = group;
+            }
+
+            if (
+                target === "multimedia" &&
+                title.includes("multimedia")
+            ) {
+                targetGroup = group;
+            }
+
+        });
+
+        if (targetGroup) {
+
+            targetGroup.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+
+            targetGroup.classList.add(
+                "search-highlight"
+            );
+
+            setTimeout(function () {
+                targetGroup.classList.remove(
+                    "search-highlight"
+                );
+            }, 1800);
         }
-    );
+
+        /* RESET */
+        searchInput.value = "";
+        clearButton.style.display = "none";
+        searchMenu.classList.remove("active");
+    });
+
+    /* TOMBOL X */
+    clearButton.addEventListener("click", function () {
+
+        searchInput.value = "";
+
+        clearButton.style.display = "none";
+
+        renderResults("");
+
+        searchInput.focus();
+    });
+
+    /* KLIK DI LUAR */
+    document.addEventListener("click", function (event) {
+
+        if (!searchBox.contains(event.target)) {
+            searchMenu.classList.remove("active");
+        }
+
+    });
 
 });
-                    </script>
+</script>
+        
+        
 
  <!-- FAEZA PROJECT SERVICE WORKER -->
 <script>
