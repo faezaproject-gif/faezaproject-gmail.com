@@ -7032,3 +7032,29 @@ section {
     font-size: 13px;
   }
 }
+
+/* Highlight layanan dari pencarian */
+
+.service-group.search-highlight {
+  animation: faezaSearchHighlight 1.8s ease;
+}
+
+@keyframes faezaSearchHighlight {
+
+  0% {
+    transform: scale(1);
+  }
+
+  35% {
+    transform: scale(1.02);
+  }
+
+  70% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+
+}
