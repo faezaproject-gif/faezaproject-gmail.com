@@ -6932,3 +6932,103 @@ section {
     }
 
 }
+
+/* =========================================
+   FAEZA PROJECT - SEARCH LAYANAN
+   ========================================= */
+
+.faeza-service-search {
+  width: min(92%, 420px);
+  margin: 14px auto 0;
+  position: relative;
+  z-index: 20;
+}
+
+.faeza-search-box {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 46px;
+  padding: 0 15px;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.10);
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.08);
+  box-sizing: border-box;
+}
+
+.faeza-search-icon {
+  font-size: 18px;
+  margin-right: 9px;
+  flex-shrink: 0;
+}
+
+.faeza-search-box input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #333;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.faeza-search-box input::placeholder {
+  color: #888;
+}
+
+.faeza-search-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 7px);
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-radius: 14px;
+  padding: 7px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.15);
+  border: 1px solid rgba(0,0,0,.08);
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.faeza-search-menu.active {
+  display: block;
+}
+
+.faeza-search-menu button {
+  width: 100%;
+  display: block;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  padding: 12px 13px;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+}
+
+.faeza-search-menu button:hover,
+.faeza-search-menu button:active {
+  background: #f7f1df;
+}
+
+/* Khusus layar kecil / iPhone */
+@media (max-width: 480px) {
+  .faeza-service-search {
+    width: 90%;
+    margin-top: 12px;
+  }
+
+  .faeza-search-box {
+    min-height: 44px;
+    border-radius: 13px;
+  }
+
+  .faeza-search-menu button {
+    padding: 11px 12px;
+    font-size: 13px;
+  }
+}
