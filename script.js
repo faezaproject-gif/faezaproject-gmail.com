@@ -992,6 +992,6 @@ function shareToFacebook() {
         block: "start"
       });
     }
-  });
+    });
 
-});
+})();
