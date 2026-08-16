@@ -7891,4 +7891,16 @@ img {
 }
 
 
+/* FINAL FIX UKURAN KARTU LAYANAN HP */
+@media screen and (max-width: 480px) {
 
+    .service-item {
+        width: 72px !important;
+        min-width: 72px !important;
+        min-height: 92px !important;
+    }
+
+    .service-item span {
+        font-size: 9px !important;
+    }
+}
