@@ -853,3 +853,144 @@ function shareToFacebook() {
     );
 }
 
+/* =====================================================
+   SEARCH FAEZA PROJECT
+   ===================================================== */
+
+(function () {
+  const toggle = document.getElementById("searchToggle");
+  const box = document.getElementById("searchBox");
+  const input = document.getElementById("siteSearch");
+  const close = document.getElementById("searchClose");
+  const results = document.getElementById("searchResults");
+
+  if (!toggle || !box || !input || !close || !results) return;
+
+  const searchData = [
+    {
+      title: "Tentang Faeza Project",
+      keywords: "tentang faeza project profil",
+      target: "#tentang"
+    },
+    {
+      title: "Layanan Umroh",
+      keywords: "umroh umrah travel ibadah",
+      target: "#layanan"
+    },
+    {
+      title: "Multimedia",
+      keywords: "multimedia desain logo poster banner brosur branding",
+      target: "#layanan"
+    },
+    {
+      title: "Event Organizer",
+      keywords: "event organizer wedding wisuda aqiqah dekorasi",
+      target: "#layanan"
+    },
+    {
+      title: "Muslim Wear",
+      keywords: "muslim wear abaya gamis koko jubah anak",
+      target: "#layanan"
+    },
+    {
+      title: "Portfolio",
+      keywords: "portfolio karya hasil desain",
+      target: "#portfolio"
+    },
+    {
+      title: "Proses Kerja",
+      keywords: "proses kerja alur kerja cara kerja",
+      target: "#proses"
+    },
+    {
+      title: "Kontak",
+      keywords: "kontak hubungi konsultasi whatsapp",
+      target: "#kontak"
+    },
+    {
+      title: "Blog",
+      keywords: "blog artikel informasi",
+      target: "blog.html"
+    }
+  ];
+
+  function openSearch() {
+    box.classList.add("active");
+
+    setTimeout(function () {
+      input.focus();
+    }, 150);
+  }
+
+  function closeSearch() {
+    box.classList.remove("active");
+    input.value = "";
+    results.innerHTML = "";
+  }
+
+  function performSearch(keyword) {
+    const query = keyword.trim().toLowerCase();
+
+    if (!query) {
+      results.innerHTML = "";
+      return;
+    }
+
+    const matches = searchData.filter(function (item) {
+      return (
+        item.title.toLowerCase().includes(query) ||
+        item.keywords.toLowerCase().includes(query)
+      );
+    });
+
+    if (!matches.length) {
+      results.innerHTML =
+        '<div class="search-empty">Tidak ditemukan hasil untuk "' +
+        keyword +
+        '"</div>';
+      return;
+    }
+
+    results.innerHTML = matches.map(function (item) {
+      return (
+        '<a class="search-result-item" href="' +
+        item.target +
+        '">' +
+        "<strong>" +
+        item.title +
+        "</strong>" +
+        "<span>" +
+        item.keywords +
+        "</span>" +
+        "</a>"
+      );
+    }).join("");
+
+    document.querySelectorAll(".search-result-item").forEach(function (item) {
+      item.addEventListener("click", function () {
+        closeSearch();
+      });
+    });
+  }
+
+  toggle.addEventListener("click", function (event) {
+    event.preventDefault();
+    event.stopPropagation();
+    openSearch();
+  });
+
+  close.addEventListener("click", function (event) {
+    event.preventDefault();
+    closeSearch();
+  });
+
+  input.addEventListener("input", function () {
+    performSearch(input.value);
+  });
+
+  input.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+      closeSearch();
+    }
+  });
+})();
