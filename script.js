@@ -954,44 +954,45 @@ function shareToFacebook() {
 
     document.querySelectorAll(".search-result-item").forEach(function (item) {
 
-      item.addEventListener("click", function (e) {
-        e.preventDefault();
+  item.addEventListener("click", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
 
-        const target = item.getAttribute("data-target");
+    const target = item.getAttribute("data-target");
 
-        /* Tutup search */
-        box.classList.remove("active");
-        input.value = "";
-        results.innerHTML = "";
+    /* Tutup search */
+    box.classList.remove("active");
+    input.value = "";
+    results.innerHTML = "";
 
-        /* Jika Blog */
-        if (target === "blog.html") {
-          window.location.href = target;
-          return;
-        }
+    /* KHUSUS LAYANAN */
+    if (target === "#services") {
+      const layanan = document.getElementById("services");
 
-        /* Cari section berdasarkan ID */
-        const section = document.querySelector(target);
+      if (layanan) {
+        window.scrollTo({
+          top: layanan.offsetTop - 70,
+          behavior: "smooth"
+        });
+      }
 
-        if (section) {
-          setTimeout(function () {
-            section.scrollIntoView({
-              behavior: "smooth",
-              block: "start"
-            });
-          }, 100);
-        }
+      return;
+    }
+
+    /* Target lainnya */
+    if (target === "blog.html") {
+      window.location.href = target;
+      return;
+    }
+
+    const section = document.querySelector(target);
+
+    if (section) {
+      section.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
       });
-
-    });
-  });
-
-  input.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") {
-      box.classList.remove("active");
-      input.value = "";
-      results.innerHTML = "";
     }
   });
 
-})();
+});
