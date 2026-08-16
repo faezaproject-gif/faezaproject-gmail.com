@@ -853,9 +853,9 @@ function shareToFacebook() {
     );
 }
 
-/* =====================================================
-   SEARCH FAEZA PROJECT
-   ===================================================== */
+/* =========================================
+   SEARCH FAEZA PROJECT - FINAL NAVIGATION
+   ========================================= */
 
 (function () {
   const toggle = document.getElementById("searchToggle");
@@ -873,23 +873,8 @@ function shareToFacebook() {
       target: "#tentang"
     },
     {
-      title: "Layanan Umroh",
-      keywords: "umroh umrah travel ibadah",
-      target: "#layanan"
-    },
-    {
-      title: "Multimedia",
-      keywords: "multimedia desain logo poster banner brosur branding",
-      target: "#layanan"
-    },
-    {
-      title: "Event Organizer",
-      keywords: "event organizer wedding wisuda aqiqah dekorasi",
-      target: "#layanan"
-    },
-    {
-      title: "Muslim Wear",
-      keywords: "muslim wear abaya gamis koko jubah anak",
+      title: "Layanan",
+      keywords: "layanan umroh multimedia event organizer muslim wear",
       target: "#layanan"
     },
     {
@@ -914,22 +899,28 @@ function shareToFacebook() {
     }
   ];
 
-  function openSearch() {
+  toggle.addEventListener("click", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
     box.classList.add("active");
 
     setTimeout(function () {
       input.focus();
     }, 150);
-  }
+  });
 
-  function closeSearch() {
+  close.addEventListener("click", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
     box.classList.remove("active");
     input.value = "";
     results.innerHTML = "";
-  }
+  });
 
-  function performSearch(keyword) {
-    const query = keyword.trim().toLowerCase();
+  input.addEventListener("input", function () {
+    const query = input.value.trim().toLowerCase();
 
     if (!query) {
       results.innerHTML = "";
@@ -945,52 +936,62 @@ function shareToFacebook() {
 
     if (!matches.length) {
       results.innerHTML =
-        '<div class="search-empty">Tidak ditemukan hasil untuk "' +
-        keyword +
-        '"</div>';
+        '<div class="search-empty">Tidak ditemukan.</div>';
       return;
     }
 
     results.innerHTML = matches.map(function (item) {
-      return (
-        '<a class="search-result-item" href="' +
-        item.target +
-        '">' +
-        "<strong>" +
-        item.title +
-        "</strong>" +
-        "<span>" +
-        item.keywords +
-        "</span>" +
-        "</a>"
-      );
+      return `
+        <button
+          type="button"
+          class="search-result-item"
+          data-target="${item.target}">
+          <strong>${item.title}</strong>
+          <span>${item.keywords}</span>
+        </button>
+      `;
     }).join("");
 
     document.querySelectorAll(".search-result-item").forEach(function (item) {
-      item.addEventListener("click", function () {
-        closeSearch();
+
+      item.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        const target = item.getAttribute("data-target");
+
+        /* Tutup search */
+        box.classList.remove("active");
+        input.value = "";
+        results.innerHTML = "";
+
+        /* Jika Blog */
+        if (target === "blog.html") {
+          window.location.href = target;
+          return;
+        }
+
+        /* Cari section berdasarkan ID */
+        const section = document.querySelector(target);
+
+        if (section) {
+          setTimeout(function () {
+            section.scrollIntoView({
+              behavior: "smooth",
+              block: "start"
+            });
+          }, 100);
+        }
       });
+
     });
-  }
-
-  toggle.addEventListener("click", function (event) {
-    event.preventDefault();
-    event.stopPropagation();
-    openSearch();
   });
 
-  close.addEventListener("click", function (event) {
-    event.preventDefault();
-    closeSearch();
-  });
-
-  input.addEventListener("input", function () {
-    performSearch(input.value);
-  });
-
-  input.addEventListener("keydown", function (event) {
-    if (event.key === "Escape") {
-      closeSearch();
+  input.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      box.classList.remove("active");
+      input.value = "";
+      results.innerHTML = "";
     }
   });
+
 })();
