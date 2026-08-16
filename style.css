@@ -8047,3 +8047,73 @@ img {
     max-height: 60vh !important;
   }
 }
+
+/* =====================================================
+   FINAL SEARCH MOBILE - FAEZA PROJECT
+   Tidak mengubah ukuran menu utama
+   ===================================================== */
+
+.search-toggle {
+  position: relative !important;
+  z-index: 10002 !important;
+  flex-shrink: 0 !important;
+}
+
+.search-box {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  max-width: none !important;
+  box-sizing: border-box !important;
+  z-index: 10001 !important;
+}
+
+.search-box .search-inner {
+  width: 100% !important;
+  max-width: 900px !important;
+  margin: 0 auto !important;
+  box-sizing: border-box !important;
+}
+
+#siteSearch {
+  min-width: 0 !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.search-results {
+  width: 100% !important;
+  max-width: 900px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box !important;
+}
+
+/* HP */
+@media (max-width: 768px) {
+
+  .search-box {
+    padding: 10px 12px !important;
+  }
+
+  .search-box .search-inner {
+    gap: 8px !important;
+  }
+
+  #siteSearch {
+    height: 44px !important;
+    font-size: 14px !important;
+  }
+
+  .search-close {
+    width: 42px !important;
+    height: 42px !important;
+    flex: 0 0 42px !important;
+  }
+
+  .search-results {
+    max-height: 65vh !important;
+    overflow-y: auto !important;
+  }
+}
