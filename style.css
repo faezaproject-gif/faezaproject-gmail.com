@@ -8181,3 +8181,28 @@ img {
         margin-left: 2px !important;
     }
 }
+
+/* =========================================
+   FINAL - RAPATKAN MENU & SEARCH
+   ========================================= */
+
+@media (max-width: 768px) {
+
+  .navbar {
+    gap: 0 !important;
+  }
+
+  .menu {
+    margin-right: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .search-toggle {
+    margin-left: -2px !important;
+    margin-right: 0 !important;
+    padding: 0 !important;
+    width: 34px !important;
+    height: 34px !important;
+    font-size: 19px !important;
+  }
+}
