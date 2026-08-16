@@ -852,3 +852,321 @@ function shareToFacebook() {
     );
 }
 
+/* =========================================
+   SEARCH FAEZA PROJECT - AMAN
+   Tidak mengganggu tombol ☰
+========================================= */
+
+(function () {
+
+    const searchToggle =
+        document.getElementById("searchToggle");
+
+    const searchBox =
+        document.getElementById("searchBox");
+
+    const searchInput =
+        document.getElementById("siteSearch");
+
+    const searchClose =
+        document.getElementById("searchClose");
+
+    const searchResults =
+        document.getElementById("searchResults");
+
+
+    /* Jika elemen Search belum ada,
+       jangan hentikan script lainnya */
+
+    if (
+        !searchToggle ||
+        !searchBox ||
+        !searchInput ||
+        !searchClose ||
+        !searchResults
+    ) {
+        return;
+    }
+
+
+    /* =====================================
+       DATA PENCARIAN
+    ===================================== */
+
+    const searchData = [
+
+        {
+            title: "Tentang Faeza Project",
+            keywords: "tentang profil faeza project",
+            target: "#about"
+        },
+
+        {
+            title: "Layanan",
+            keywords:
+                "layanan umroh multimedia event organizer muslim wear",
+            target: "#services"
+        },
+
+        {
+            title: "Portfolio",
+            keywords:
+                "portfolio karya desain project",
+            target: "#portfolio"
+        },
+
+        {
+            title: "Proses Kerja",
+            keywords:
+                "proses kerja alur kerja",
+            target: "#alur-kerja"
+        },
+
+        {
+            title: "Kontak",
+            keywords:
+                "kontak konsultasi whatsapp",
+            target: "#cta"
+        },
+
+        {
+            title: "Blog",
+            keywords:
+                "blog artikel informasi",
+            target: "blog.html"
+        }
+
+    ];
+
+
+    /* =====================================
+       BUKA SEARCH
+    ===================================== */
+
+    searchToggle.addEventListener(
+        "click",
+        function (event) {
+
+            event.preventDefault();
+            event.stopPropagation();
+
+            searchBox.classList.add("active");
+
+            setTimeout(function () {
+
+                searchInput.focus();
+
+            }, 100);
+
+        }
+    );
+
+
+    /* =====================================
+       TUTUP SEARCH
+    ===================================== */
+
+    searchClose.addEventListener(
+        "click",
+        function (event) {
+
+            event.preventDefault();
+            event.stopPropagation();
+
+            searchBox.classList.remove("active");
+
+            searchInput.value = "";
+
+            searchResults.innerHTML = "";
+
+        }
+    );
+
+
+    /* =====================================
+       PENCARIAN
+    ===================================== */
+
+    searchInput.addEventListener(
+        "input",
+        function () {
+
+            const query =
+                searchInput.value
+                .trim()
+                .toLowerCase();
+
+
+            if (!query) {
+
+                searchResults.innerHTML = "";
+
+                return;
+
+            }
+
+
+            const matches =
+                searchData.filter(function (item) {
+
+                    return (
+
+                        item.title
+                            .toLowerCase()
+                            .includes(query)
+
+                        ||
+
+                        item.keywords
+                            .toLowerCase()
+                            .includes(query)
+
+                    );
+
+                });
+
+
+            if (!matches.length) {
+
+                searchResults.innerHTML =
+                    '<div class="search-empty">' +
+                    'Tidak ditemukan.' +
+                    '</div>';
+
+                return;
+
+            }
+
+
+            searchResults.innerHTML =
+                matches.map(function (item) {
+
+                    return (
+
+                        '<button ' +
+
+                        'type="button" ' +
+
+                        'class="search-result-item" ' +
+
+                        'data-target="' +
+                        item.target +
+                        '">' +
+
+                        '<strong>' +
+                        item.title +
+                        '</strong>' +
+
+                        '<span>' +
+                        item.keywords +
+                        '</span>' +
+
+                        '</button>'
+
+                    );
+
+                }).join("");
+
+
+            /* =================================
+               KLIK HASIL SEARCH
+            ================================= */
+
+            searchResults
+                .querySelectorAll(
+                    ".search-result-item"
+                )
+                .forEach(function (result) {
+
+                    result.addEventListener(
+                        "click",
+                        function (event) {
+
+                            event.preventDefault();
+                            event.stopPropagation();
+
+
+                            const target =
+                                this.dataset.target;
+
+
+                            /* Tutup Search */
+
+                            searchBox
+                                .classList
+                                .remove("active");
+
+                            searchInput.value = "";
+
+                            searchResults.innerHTML = "";
+
+
+                            /* Blog */
+
+                            if (
+                                target === "blog.html"
+                            ) {
+
+                                window.location.href =
+                                    target;
+
+                                return;
+
+                            }
+
+
+                            /* Section */
+
+                            const section =
+                                document.querySelector(
+                                    target
+                                );
+
+
+                            if (section) {
+
+                                section.scrollIntoView({
+                                    behavior:
+                                        "smooth",
+                                    block:
+                                        "start"
+                                });
+
+                            }
+
+                        }
+                    );
+
+                });
+
+        }
+    );
+
+
+    /* =====================================
+       ESC = TUTUP
+    ===================================== */
+
+    searchInput.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (
+                event.key === "Escape"
+            ) {
+
+                searchBox
+                    .classList
+                    .remove("active");
+
+                searchInput.value = "";
+
+                searchResults.innerHTML = "";
+
+            }
+
+        }
+    );
+
+
+})();
