@@ -7905,3 +7905,145 @@ img {
     }
 }
 
+/* =====================================================
+   SEARCH FAEZA PROJECT
+   Aman: tidak mengubah ukuran menu/lainnya
+   ===================================================== */
+
+.search-toggle {
+  border: 0 !important;
+  background: transparent !important;
+  color: #d4af37 !important;
+  font-size: 21px !important;
+  width: 42px !important;
+  height: 42px !important;
+  padding: 0 !important;
+  margin: 0 4px !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 50% !important;
+}
+
+.search-toggle:hover {
+  background: rgba(212, 175, 55, 0.12) !important;
+}
+
+.search-box {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  background: #ffffff !important;
+  padding: 14px 16px !important;
+  box-sizing: border-box !important;
+  box-shadow: 0 4px 18px rgba(0,0,0,.15) !important;
+  z-index: 10000 !important;
+
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: translateY(-20px) !important;
+  transition: all .25s ease !important;
+}
+
+.search-box.active {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) !important;
+}
+
+.search-inner {
+  max-width: 900px !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+#siteSearch {
+  flex: 1 !important;
+  width: auto !important;
+  height: 46px !important;
+  padding: 0 16px !important;
+  border: 1px solid #ddd !important;
+  border-radius: 25px !important;
+  outline: none !important;
+  background: #f8f8f8 !important;
+  color: #222 !important;
+  font-size: 15px !important;
+  box-sizing: border-box !important;
+}
+
+#siteSearch:focus {
+  border-color: #d4af37 !important;
+  box-shadow: 0 0 0 3px rgba(212,175,55,.12) !important;
+}
+
+.search-close {
+  width: 44px !important;
+  height: 44px !important;
+  border: 0 !important;
+  border-radius: 50% !important;
+  background: #f1f1f1 !important;
+  color: #333 !important;
+  font-size: 18px !important;
+  cursor: pointer !important;
+}
+
+.search-results {
+  max-width: 900px !important;
+  margin: 10px auto 0 !important;
+  max-height: 55vh !important;
+  overflow-y: auto !important;
+}
+
+.search-result-item {
+  display: block !important;
+  padding: 12px 14px !important;
+  margin: 5px 0 !important;
+  border-radius: 10px !important;
+  background: #f8f8f8 !important;
+  color: #222 !important;
+  text-decoration: none !important;
+  font-size: 14px !important;
+}
+
+.search-result-item:hover {
+  background: #f1e6b8 !important;
+}
+
+.search-result-item strong {
+  display: block !important;
+  color: #b28b00 !important;
+  margin-bottom: 3px !important;
+}
+
+.search-empty {
+  padding: 15px !important;
+  text-align: center !important;
+  color: #777 !important;
+  font-size: 14px !important;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .search-toggle {
+    font-size: 20px !important;
+    width: 38px !important;
+    height: 38px !important;
+  }
+
+  .search-box {
+    padding: 12px !important;
+  }
+
+  #siteSearch {
+    height: 44px !important;
+    font-size: 14px !important;
+  }
+
+  .search-results {
+    max-height: 60vh !important;
+  }
+}
