@@ -8206,3 +8206,37 @@ img {
     font-size: 19px !important;
   }
 }
+
+/* =========================================
+   FAEZA PROJECT
+   RAPATKAN ☰ + 🔍 DI HEADER MOBILE
+   ========================================= */
+
+@media (max-width: 768px) {
+
+  .navbar {
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  .menu {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 0 !important;
+  }
+
+  #searchToggle {
+    position: static !important;
+    display: inline-flex !important;
+    flex: 0 0 34px !important;
+    width: 34px !important;
+    min-width: 34px !important;
+    max-width: 34px !important;
+    height: 34px !important;
+    margin: 0 0 0 2px !important;
+    padding: 0 !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 19px !important;
+  }
+}
