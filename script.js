@@ -870,12 +870,12 @@ function shareToFacebook() {
     {
       title: "Tentang Faeza Project",
       keywords: "tentang faeza project profil",
-      target: "#tentang"
+      target: "#about"
     },
     {
       title: "Layanan",
       keywords: "layanan umroh multimedia event organizer muslim wear",
-      target: "#layanan"
+      target: "#services"
     },
     {
       title: "Portfolio",
@@ -885,7 +885,7 @@ function shareToFacebook() {
     {
       title: "Proses Kerja",
       keywords: "proses kerja alur kerja cara kerja",
-      target: "#proses"
+      target: "#alur-kerja""
     },
     {
       title: "Kontak",
