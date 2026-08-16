@@ -884,7 +884,7 @@ function shareToFacebook() {
     {
       title: "Proses Kerja",
       keywords: "proses kerja alur kerja cara kerja",
-      target: "#alur-kerja""
+      target: "#alur-kerja"
     },
     {
       title: "Kontak",
