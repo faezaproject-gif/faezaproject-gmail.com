@@ -7890,96 +7890,61 @@ img {
     }
 }
 
-/* =========================================================
-   FINAL MOBILE POLISH - FAEZA PROJECT
-   WhatsApp + spacing section Tentang
-   ========================================================= */
+/* =========================================
+   FIX MOBILE - FAEZA PROJECT
+   Jangan gunakan selector href wa.me
+   ========================================= */
 
 @media (max-width: 768px) {
 
-  /* WhatsApp floating button */
+  /* FLOATING WHATSAPP SAJA */
   .whatsapp-float,
   .floating-whatsapp,
-  .wa-float,
-  a[href*="wa.me"] {
-    bottom: 82px !important;
+  .wa-float {
+    position: fixed !important;
     right: 18px !important;
+    bottom: 78px !important;
     width: 52px !important;
     height: 52px !important;
     min-width: 52px !important;
     min-height: 52px !important;
+    padding: 0 !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
     z-index: 9999 !important;
   }
 
-  /* Ukuran ikon WhatsApp */
   .whatsapp-float i,
   .floating-whatsapp i,
-  .wa-float i,
-  a[href*="wa.me"] i {
+  .wa-float i {
     font-size: 28px !important;
   }
 
-  /* Beri ruang agar tombol WA tidak menutupi
-     isi halaman ketika berada di bagian bawah */
-  body {
-    padding-bottom: 90px !important;
+  /* TOMBOL KONSULTASI KEMBALI NORMAL */
+  .consultation-btn,
+  .consult-btn,
+  .btn-consultation,
+  .hero .btn,
+  .hero a.button {
+    width: auto !important;
+    min-width: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 16px 42px !important;
+    border-radius: 50px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    white-space: nowrap !important;
   }
 
-  /* Section Tentang */
+  /* Tentang */
   #tentang,
   .tentang,
   .about {
-    padding-top: 55px !important;
-    padding-bottom: 55px !important;
-  }
-
-  /* Judul Tentang */
-  #tentang h2,
-  .tentang h2,
-  .about h2 {
-    font-size: 30px !important;
-    line-height: 1.25 !important;
-    margin-bottom: 28px !important;
-  }
-
-  /* Teks Tentang */
-  #tentang p,
-  .tentang p,
-  .about p {
-    font-size: 17px !important;
-    line-height: 1.8 !important;
-  }
-
-  /* Mencegah konten melebar di layar HP */
-  section {
-    max-width: 100% !important;
-    overflow-x: hidden !important;
-  }
-}
-
-/* HP sangat kecil */
-@media (max-width: 400px) {
-
-  .whatsapp-float,
-  .floating-whatsapp,
-  .wa-float,
-  a[href*="wa.me"] {
-    right: 15px !important;
-    bottom: 78px !important;
-    width: 48px !important;
-    height: 48px !important;
-  }
-
-  #tentang h2,
-  .tentang h2,
-  .about h2 {
-    font-size: 27px !important;
-  }
-
-  #tentang p,
-  .tentang p,
-  .about p {
-    font-size: 16px !important;
-    line-height: 1.75 !important;
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
   }
 }
